@@ -1,0 +1,486 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap'); /*fonte Open Sans*/ 
+
+         *{ /*Reseta o css*/
+             margin: 0;
+             padding: 0;
+             box-sizing: border-box;
+         }
+
+         body{
+            font-family: 'Open Sans', sans-serif;
+
+         }
+
+         div.quadro{ /* centraliza e coloca colunas paralelas*/
+             display: flex; /*Coloca em Paralelo*/
+             /*border: 2px solid;*/
+             justify-content: center; /*Centraliza*/
+             align-items: center;
+             height: 85vh; /*Deixa no meio*/
+            
+         }
+
+         .bloco{
+            position: relative;
+            justify-content: space-between;
+            align-items: center;
+            
+            background-color: white;
+            border-radius: 15px;
+            width: 960px;
+            height: 60%;
+         }
+
+         .bloco::before{ /*transição para telas*/
+             content: "";
+             position: absolute;
+             background-color: rgb(8, 184, 8);
+             width: 40%;
+             height: 100%;
+             border-top-left-radius: 15px;
+             border-bottom-left-radius: 15px;
+             z-index: 5;
+             left: 0%;
+         }
+
+         .parteUm{
+            display: flex;
+         }
+         .parteUm .coluna2{
+             z-index: 12;
+         }
+
+         .titulo{
+             font-size: 28px;
+             font-weight: bold;
+             text-transform: capitalize;
+         }
+
+         .titulo-BemVindo{
+            color:rgb(255, 255, 255);
+         }
+
+         .titulo-Conta{
+             color: rgb(255, 255, 255);
+         }
+
+         .descricao{
+             font-size: 14px;
+             font-weight: 300;
+             line-height: 30px;
+         }
+         .d1{
+             color: white;
+         }
+         .d2{
+             color: rgb(255, 255, 255);;
+         }
+
+
+         .botao1{ /*Botões em geral*/
+             border-radius: 15px;
+             text-transform: uppercase;
+             color: white;
+             font-size: 10px;
+             padding: 10px 50px;
+             cursor: pointer;
+             font-weight: bold;
+             width: 150px;
+             align-self: center;
+             border-width: 0px; /*Tira a borda*/
+             margin-top: 1rem; /*Espaçamento entre os outros elememtos */
+             text-align: center;
+         }
+
+         .btn-Primeiro{ /*Primeiro botão*/
+             background-color: transparent;
+             border: 1px solid rgb(255, 255, 255);
+             transition: background-color .25s; /*Transição de uma cor para outra*/
+         }
+         .btn-Primeiro:hover{
+             background-color: white;
+             color: rgb(4, 136, 4);
+         }
+
+         .btn-Segundo{ /*Segundo botão*/
+             background-color: rgb(8, 184, 8);
+             border: 1px solid rgb(8, 184, 8);
+             transition: background-color .25s; /*Transição de uma cor para outra*/
+         }
+         .btn-Segundo:hover{
+             background-color: white;
+             border: 1px solid rgb(8, 184, 8);
+             color: rgb(8, 184, 8); /*Cor da fonte*/
+             font-weight: bold;
+         }
+
+         div.coluna1{
+            text-align: center;
+            /* flex: 1 0 auto; Coluna 1 */
+            z-index: 10;
+            width: 40%;
+         }
+         div.coluna2{
+            /*text-align: center;*/
+            /* flex: 2 0 auto; Coluna 2 */
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+         }
+
+         .midia_social{
+             margin: 1rem 0; /*Espaçamento*/
+         }
+         .link_midia_social:not(:first-child){ /*Pseudo class*/
+            margin-left: 10px; /*Atribui a função menos para o 1° elemento(face)*/
+         }
+         .link_midia_social .item_midia_social{
+            transition: background-color .25s; /*Transição de uma cor para outra*/
+         }
+         .link_midia_social:hover .item_midia_social{ /*Faz a transição de cores*/
+            background-color: rgb(8, 184, 8);
+            color: white;
+            border-color: rgb(8, 184, 8);
+        }
+         ul.lista_midia_social{
+             display: flex; /*Paralelo*/
+         }
+         .lista_midia_social{
+             list-style-type: none; /*sem icone de marcação ° */
+         }
+         .item_midia_social{
+            border: 1px solid rgb(160, 161, 163);
+            border-radius: 50%;/*Borda arredondada*/
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            color: rgb(160, 161, 163);
+         }
+
+         .formulario{
+            display: flex;
+            flex-direction: column; /*Coloca os valores um em baixo do outro*/
+            width: 55%; 
+         }
+
+         .formulario input {
+            height: 45px;
+            width: 100%;
+            border: none;
+            background-color: #d7dbdb;
+            /* margin: 5px; Espaçamento entre os inputs */
+         }
+
+         .label-input{
+             background-color: #d7dbdb;
+             display: flex;
+             align-items: center;
+             margin: 3px;
+         }
+         .icon-Modify{
+             color: rgb(160, 161, 163);
+             padding: 0 5px;
+         }
+
+         /*--------------------------------------------------------------------------------------------------*/
+
+         .parteDois{
+            display: flex;
+            position: absolute; /*Tira a junção de espaço, e coloca junto os blocos um em cima do outro*/
+            /* display: none; Deixar um bloco a mostra por vez */
+         }
+
+         .parteDois .coluna1{
+             order: 2; /*Muda a ordem das colunas*/
+             z-index: -1;
+         }
+
+         .parteDois .coluna2{
+             order: 1;
+             z-index: -1;
+         }
+
+         .password{
+             color: #34495e;
+             font-size: 14px;
+             margin: 15px 0;
+             text-align: center;
+         }
+
+         .VoltarMenu{
+             position: relative;
+             z-index: 20;
+             list-style-type: none;
+             color: white;
+             text-decoration: none
+             
+         }
+         
+
+         .Entrar-js .parteUm .coluna1,
+         .Entrar-js .parteUm .coluna2{
+             z-index: -1;
+         }
+         .Entrar-js .parteDois .coluna2{
+             z-index: 11;
+         }
+         .Entrar-js .parteDois .coluna1{
+            z-index: 13;
+         }
+         .Entrar-js .bloco::before{
+             left: 60%;
+             border-top-right-radius: 15px;
+             border-bottom-right-radius: 15px;
+
+             border-top-left-radius: 0px;
+             border-bottom-left-radius: 0px;
+
+             animation: slidein 2s; /*Onde é colocado para iniciar a animação*/
+             z-index: 12;
+         }
+
+         .Cadastrar-js .parteDois .coluna1,
+         .Cadastrar-js .parteDois .coluna2{
+             z-index: -1;
+         }
+         .Cadastrar-js .parteUm .coluna2{
+             z-index: 11;
+         }
+         .Cadastrar-js .parteUm .coluna1{
+             z-index: 13;
+         }
+         .Cadastrar-js .bloco::before{
+            animation: slideout 2s;
+            z-index: 12;
+         }
+
+         /*Deslocamento do Conteudo atras do .bloco::before*/
+         .Entrar-js .parteUm .coluna2{
+             z-index: -1;
+             position: relative;
+             animation: deslocamentoEsq 2s;
+         }
+         .Cadastrar-js .parteDois .coluna2{
+             z-index: -1;
+             position: relative;
+             animation: deslocamentoDir 2s;
+         }
+
+         .Cadastrar-js .parteUm .coluna1{
+             position: relative;
+             animation: opacidade 2.5s;
+         }
+         .Entrar-js .parteDois .coluna1{
+             position: relative;
+             animation: opacidade 2.5s;
+         }
+         .Cadastrar-js .parteUm .coluna2{
+             position: relative;
+             animation: opacidade 2s;
+         }
+         .Entrar-js .parteDois .coluna2{
+             position: relative;
+             animation: opacidade 2s;
+         }
+         /*ANIMAÇÃO CSS PARA O CONTEUDO*/
+         @keyframes deslocamentoEsq{
+             from{
+                left: 0;
+                opacity: 1;
+                z-index: 12;
+             }
+
+             25%{
+                left: -80px;
+                opacity: .5;
+                z-index: 12;
+             }
+
+             50%{
+                left: -100px;
+                opacity: .3;
+                z-index: 12;
+             }
+
+             to{
+                left: -110px;
+                opacity: 0;
+                z-index: -1;
+             }
+         }
+         @keyframes deslocamentoDir{
+             from{
+                left: 0px;
+                opacity: 1;
+                z-index: 12;
+             }
+
+             25%{
+                left: 80px;
+                opacity: .5;
+             }
+
+             50%{
+                left: 100px;
+                opacity: .3;
+             }
+
+             to{
+                left: 110px;
+                opacity: 0;
+                z-index: -1;
+             }
+         }
+
+         /*ANIMAÇÃO CSS*/
+
+         @keyframes slidein{
+             from{ /*Inicio*/
+                left: 0;
+                width: 40%;
+             }
+
+             25%{
+                left: 5%;
+                width: 50%;
+             }
+
+             50%{
+                left: 25%;
+                width: 60%;
+             }
+
+             75%{
+                left: 45%;
+                width: 50%;
+             }
+
+             to{
+                left: 60%;
+                width: 40%;
+             }
+
+         }
+
+         @keyframes slideout{
+             from{ /*Inicio*/
+                left: 60%;
+                width: 40%;
+             }
+
+             25%{
+                left: 45%;
+                width: 50%;
+             }
+
+             50%{
+                left: 25%;
+                width: 60%;
+             }
+
+             75%{
+                left: 5%;
+                width: 50%;
+             }
+
+             to{
+                left: 0%;
+                width: 40%;
+             }
+
+         }
+         @keyframes opacidade{
+             from{
+                opacity: 0;
+             }
+
+             25%{
+                opacity: 0;
+             }
+
+             50%{
+                opacity: .3;
+             }
+
+             75%{
+                 opacity: .6;
+             }
+
+             to{
+                opacity: 1;
+             }
+         }
+       
+         /*Animação do plano de fundo*/
+         @keyframes move_wave {
+            0% {
+                transform: translateX(0) translateZ(0) scaleY(1)
+            }
+            50% {
+                transform: translateX(-25%) translateZ(0) scaleY(0.55)
+            }
+            100% {
+                transform: translateX(-50%) translateZ(0) scaleY(1)
+            }
+        }
+        .waveWrapper {
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+        }
+        .waveWrapperInner {
+            position: absolute;
+            width: 100%;
+            overflow: hidden;
+            height: 100%;
+            bottom: -1px;
+            background-image: linear-gradient(to top, rgb(132, 255, 132) 20%, rgb(0, 255, 0) 80%);
+        }
+        .bgTop {
+            z-index: 3;
+            opacity: 0.5;
+        }
+        .bgMiddle {
+            z-index: 2;
+            opacity: 0.75;
+        }
+        .bgBottom {
+            z-index: 1;
+        }
+        .wave {
+            position: absolute;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background-repeat: repeat no-repeat;
+            background-position: 0 bottom;
+            transform-origin: center bottom;
+        }
+        .waveTop {
+            background-size: 50% 100px;
+        }
+        .waveAnimation .waveTop {
+        animation: move-wave 3s;
+        -webkit-animation: move-wave 3s;
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+        }
+        .waveMiddle {
+            background-size: 50% 120px;
+        }
+        .waveAnimation .waveMiddle {
+            animation: move_wave 10s linear infinite;
+        }
+        .waveBottom {
+            background-size: 50% 100px;
+        }
+        .waveAnimation .waveBottom {
+            animation: move_wave 15s linear infinite;
+        }
+        /*---------------------------------*/
