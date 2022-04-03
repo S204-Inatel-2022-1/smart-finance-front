@@ -22,7 +22,7 @@
                 <h2 class="titulo titulo-BemVindo">Bem vindo!</h2>
                 <p class="descricao d1">Desejamos a você uma ótima experiência!</p>
                 <p class="descricao d1">por favor, logue com suas informações pessoais</p> 
-                <button id="Entrar" class="botao1 btn-Primeiro">Entrar</button>
+                <button id="op1" class="botao1 btn-Primeiro">Entrar</button>
             </div>
 
             <div class="coluna2"> <!--Coluna Esquerda-->
@@ -47,20 +47,21 @@
                     </ul> <!--Social-->
                 </div>
                 <p class="descricao d2">ou use seu email para registrar:</p>
-                <form class="formulario"> <!--Inputs do login 1-->
+                <!--Inputs do login 1-->
+                <form class="formulario"> 
                     <label class="label-input" for="">
                         <i class="fa-regular fa-user icon-Modify"></i>
-                        <input type="text" class="Nome" placeholder="Nome"> <!--Input nome-->
+                        <input id="nomeCadastro" type="text" class="Nome" placeholder="Nome"> <!--Input nome-->
                     </label>
                     <label class="label-input" for="">
                         <i class="fa-regular fa-envelope icon-Modify"></i>
-                        <input type="email" class="Email" placeholder="Email"> <!--Input Email-->
+                        <input id="emailCadastro" type="email" class="Email" placeholder="Email"> <!--Input Email-->
                     </label>
                     <label class="label-input" for="">
                         <i class="fa-solid fa-lock icon-Modify"></i>
-                        <input type="senha" class="Senha" placeholder="Senha"> <!--Input Senha-->
+                        <input id="senhaCadastro" type="password" class="Senha" placeholder="Senha"> <!--Input Senha-->
                     </label>
-                    <button class="botao1 btn-Segundo">Cadastrar</button>
+                    <button id="cadastrar" class="botao1 btn-Segundo">Cadastrar</button>
                 </form>
             </div>
         </div>
@@ -70,7 +71,7 @@
                 <h2 class="titulo titulo-BemVindo">Olá, Amigo!</h2>
                 <p class="descricao d1">Insira seus dados pessoais aqui</p>
                 <p class="descricao d1">e comece sua jornada conosco!</p> 
-                <button id="Cadastrar" class="botao1 btn-Primeiro">Cadastrar</button>
+                <button id="op2" class="botao1 btn-Primeiro">Cadastrar</button>
             </div>
 
             <div class="coluna2"> <!--Coluna Esquerda-->
@@ -95,17 +96,18 @@
                     </ul> <!--Social-->
                 </div>
                 <p class="descricao d2">ou use seu email para registrar:</p>
-                <form class="formulario"> <!--Inputs do login 2-->
+                <!--Inputs do login 2-->
+                <form class="formulario"> 
                     <label class="label-input" for="">
                         <i class="fa-regular fa-envelope icon-Modify"></i>
-                        <input type="email" class="Email" placeholder="Email"> <!--Input Email-->
+                        <input id="emailLogin" type="email" class="Email" placeholder="Email"> <!--Input Email-->
                     </label>
                     <label class="label-input" for="">
                         <i class="fa-solid fa-lock icon-Modify"></i>
-                        <input type="senha" class="Senha" placeholder="Senha"> <!--Input Senha-->
+                        <input id="senhaLogin" type="password" class="Senha" placeholder="Senha"> <!--Input Senha-->
                     </label>
                     <a class="password" href="#">Esqueceu sua senha?</a>
-                    <button class="botao1 btn-Segundo">Entrar</button>
+                    <button id="entrar" class="botao1 btn-Segundo">Entrar</button>
                 </form>
             </div>
         </div>
@@ -126,6 +128,7 @@
       <!-- --------------------------- -->
 
       <script type="text/javascript" src="assets/js/login.js"></script>
+      <script type="text/javascript" src="assets/js/cadastro.js"></script>
      
  </body>
  </html>
