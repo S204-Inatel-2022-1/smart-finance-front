@@ -1,132 +1,135 @@
- <!DOCTYPE html>
- <html lang="pt-br">
- <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Login</title>
-     <script src="https://kit.fontawesome.com/531f1902dc.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/css/login.css" />
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://kit.fontawesome.com/531f1902dc.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="assets/css/login.css" />
 
- </head>
- <body>
-    <li class="has-sub">
-        <li><a class="VoltarMenu" href="index.html">Voltar</a></li>
-    </li>
+</head>
+<body>
+   <li class="has-sub">
+       <li><a class="VoltarMenu" href="index.html"><strong>Voltar</strong></a></li>
+           
+   </li>
 
-    <div class='quadro'>
+   <div class='quadro'>
 
-        <div class="bloco parteUm"> <!--Primeira tela login-->
-            <div class="coluna1"> <!--Coluna Direita-->
-                <h2 class="titulo titulo-BemVindo">Bem vindo!</h2>
-                <p class="descricao d1">Desejamos a você uma ótima experiência!</p>
-                <p class="descricao d1">por favor, logue com suas informações pessoais</p>
-                <button id="op1" class="botao1 btn-Primeiro">Entrar</button>
-            </div>
+       <div class="bloco parteUm"> <!--Primeira tela login-->
+           <div class="coluna1"> <!--Coluna Direita-->
+               <img src="assets/images/templatemoV2.png" alt="EduWell Template">
+               <h2 class="titulo titulo-BemVindo">Bem vindo!</h2>
+               <p class="descricao d1">Desejamos a você uma ótima experiência!</p>
+               <p class="descricao d1">por favor, logue com suas informações pessoais</p> 
+               <button id="op1" class="botao1 btn-Primeiro">Entrar</button>
+           </div>
 
-            <div class="coluna2"> <!--Coluna Esquerda-->
-                <h2 class="titulo titulo-Conta">Crie uma conta</h2>
-                <div class="midia_social">
-                    <ul class="lista_midia_social"> <!--Links para conectar a conta-->
-                        <a class="link_midia_social" href="#">
-                            <li class="item_midia_social">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </li>
-                        </a><!--a significa o links-->
-                        <a class="link_midia_social" href="#">
-                            <li class="item_midia_social">
-                                <i class="fa-brands fa-google-plus-g"></i>
-                            </li> 
-                        </a>
-                        <a class="link_midia_social" href="#">
-                            <li class="item_midia_social"> 
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </li>
-                        </a>
-                    </ul> <!--Social-->
-                </div>
-                <p class="descricao d2">ou use seu email para registrar:</p>
-                <!--Inputs do login 1-->
-                <form class="formulario"> 
-                    <label class="label-input" for="">
-                        <i class="fa-regular fa-user icon-Modify"></i>
-                        <input id="nomeCadastro" type="text" class="Nome" placeholder="Nome"> <!--Input nome-->
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="fa-regular fa-envelope icon-Modify"></i>
-                        <input id="emailCadastro" type="email" class="Email" placeholder="Email"> <!--Input Email-->
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="fa-solid fa-lock icon-Modify"></i>
-                        <input id="senhaCadastro" type="password" class="Senha" placeholder="Senha"> <!--Input Senha-->
-                    </label>
-                    <button id="cadastrar" class="botao1 btn-Segundo">Cadastrar</button>
-                </form>
-            </div>
-        </div>
+           <div class="coluna2"> <!--Coluna Esquerda-->
+               <h2 class="titulo titulo-Conta">Crie uma conta</h2>
+               <!-- <div class="midia_social">
+                   <ul class="lista_midia_social"> Links para conectar a conta
+                       <a class="link_midia_social" href="#">
+                           <li class="item_midia_social">
+                               <i class="fa-brands fa-facebook-f"></i>
+                           </li>
+                       </a>  a significa o links
+                       <a class="link_midia_social" href="#">
+                           <li class="item_midia_social">
+                               <i class="fa-brands fa-google-plus-g"></i>
+                           </li> 
+                       </a>
+                       <a class="link_midia_social" href="#">
+                           <li class="item_midia_social"> 
+                               <i class="fa-brands fa-linkedin-in"></i>
+                           </li>
+                       </a>
+                   </ul> Social
+               </div> -->
+               <p class="descricao d2">ou use seu email para registrar:</p>
+               <!--Inputs do login 1-->
+               <form class="formulario"> 
+                   <label class="label-input" for="">
+                       <i class="fa-regular fa-user icon-Modify"></i>
+                       <input id="nomeCadastro" type="text" class="Nome" placeholder="Nome"> <!--Input nome-->
+                   </label>
+                   <label class="label-input" for="">
+                       <i class="fa-regular fa-envelope icon-Modify"></i>
+                       <input id="emailCadastro" type="email" class="Email" placeholder="Email"> <!--Input Email-->
+                   </label>
+                   <label class="label-input" for="">
+                       <i class="fa-solid fa-lock icon-Modify"></i>
+                       <input id="senhaCadastro" type="password" class="Senha" placeholder="Senha"> <!--Input Senha-->
+                   </label>
+                   <button id="cadastrar" class="botao1 btn-Segundo">Cadastrar</button>
+               </form>
+           </div>
+       </div>
 
-        <div class="bloco parteDois"><!--Segunda tela cadastro-->
-            <div class="coluna1"> <!--Coluna Direita-->
-                <h2 class="titulo titulo-BemVindo">Olá, Amigo!</h2>
-                <p class="descricao d1">Insira seus dados pessoais aqui</p>
-                <p class="descricao d1">e comece sua jornada conosco!</p> 
-                <button id="op2" class="botao1 btn-Primeiro">Cadastrar</button>
-            </div>
+       <div class="bloco parteDois"><!--Segunda tela cadastro-->
+           <div class="coluna1"> <!--Coluna Direita-->
+               <img src="assets/images/templatemoV2.png" alt="EduWell Template">
+               <h2 class="titulo titulo-BemVindo">Olá, Amigo!</h2>
+               <p class="descricao d1">Insira seus dados pessoais aqui</p>
+               <p class="descricao d1">e comece sua jornada conosco!</p> 
+               <button id="op2" class="botao1 btn-Primeiro">Cadastrar</button>
+           </div>
 
-            <div class="coluna2"> <!--Coluna Esquerda-->
-                <h2 class="titulo titulo-Conta">Acesse sua conta</h2>
-                <div class="midia_social">
-                    <ul class="lista_midia_social"> <!--Links para conectar a conta-->
-                        <a class="link_midia_social" href="#">
-                            <li class="item_midia_social">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </li>
-                        </a><!--a significa o links-->
-                        <a class="link_midia_social" href="#">
-                            <li class="item_midia_social">
-                                <i class="fa-brands fa-google-plus-g"></i>
-                            </li> 
-                        </a>
-                        <a class="link_midia_social" href="#">
-                            <li class="item_midia_social"> 
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </li>
-                        </a>
-                    </ul> <!--Social-->
-                </div>
-                <p class="descricao d2">ou use seu email para registrar:</p>
-                <!--Inputs do login 2-->
-                <form class="formulario"> 
-                    <label class="label-input" for="">
-                        <i class="fa-regular fa-envelope icon-Modify"></i>
-                        <input id="emailLogin" type="email" class="Email" placeholder="Email"> <!--Input Email-->
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="fa-solid fa-lock icon-Modify"></i>
-                        <input id="senhaLogin" type="password" class="Senha" placeholder="Senha"> <!--Input Senha-->
-                    </label>
-                    <a class="password" href="#">Esqueceu sua senha?</a>
-                    <button id="entrar" class="botao1 btn-Segundo">Entrar</button>
-                </form>
-            </div>
-        </div>
-    </div>
+           <div class="coluna2"> <!--Coluna Esquerda-->
+               <h2 class="titulo titulo-Conta">Acesse sua conta</h2>
+               <!-- <div class="midia_social">
+                   <ul class="lista_midia_social"> Links para conectar a conta
+                       <a class="link_midia_social" href="#">
+                           <li class="item_midia_social">
+                               <i class="fa-brands fa-facebook-f"></i>
+                           </li>
+                       </a>  a significa o links
+                       <a class="link_midia_social" href="#">
+                           <li class="item_midia_social">
+                               <i class="fa-brands fa-google-plus-g"></i>
+                           </li> 
+                       </a>
+                       <a class="link_midia_social" href="#">
+                           <li class="item_midia_social"> 
+                               <i class="fa-brands fa-linkedin-in"></i>
+                           </li>
+                       </a>
+                   </ul> Social
+               </div> -->
+               <p class="descricao d2">ou use seu email para registrar:</p>
+               <!--Inputs do login 2-->
+               <form class="formulario"> 
+                   <label class="label-input" for="">
+                       <i class="fa-regular fa-envelope icon-Modify"></i>
+                       <input id="emailLogin" type="email" class="Email" placeholder="Email"> <!--Input Email-->
+                   </label>
+                   <label class="label-input" for="">
+                       <i class="fa-solid fa-lock icon-Modify"></i>
+                       <input id="senhaLogin" type="password" class="Senha" placeholder="Senha"> <!--Input Senha-->
+                   </label>
+                   <a class="password" href="#">Esqueceu sua senha?</a>
+                   <button id="entrar" class="botao1 btn-Segundo">Entrar</button>
+               </form>
+           </div>
+       </div>
+   </div>
 
-    <!--Plano de fundo-->
-    <div class="waveWrapper waveAnimation">
-        <div class="waveWrapperInner bgTop">
-          <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
-        </div>
-        <div class="waveWrapperInner bgMiddle">
-          <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
-        </div>
-        <div class="waveWrapperInner bgBottom">
-          <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
-        </div>
-      </div>
-      <!-- --------------------------- -->
+   <!--Plano de fundo-->
+   <div class="waveWrapper waveAnimation">
+       <div class="waveWrapperInner bgTop">
+         <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+       </div>
+       <div class="waveWrapperInner bgMiddle">
+         <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+       </div>
+       <div class="waveWrapperInner bgBottom">
+         <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+       </div>
+     </div>
+     <!-- --------------------------- -->
 
-      <script type="text/javascript" src="assets/js/script.js"></script>
-     
- </body>
- </html>
+     <script type="text/javascript" src="assets/js/script.js"></script>
+    
+</body>
+</html>
