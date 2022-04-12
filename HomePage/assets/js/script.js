@@ -45,30 +45,17 @@ entrar.addEventListener('click', (event) => {
         if (this.status == 200) {
             const data = this.responseText;
 
-            console.log(data)
-            /*
             if(data == 'Success'){
                 localStorage.setItem("loggedIn", "true")
-                localStorage.setItem("username", user.value)
                 
-                if(localStorage.getItem("username") == "admin")
-                {
-                    window.location.replace("./connect/api-test.html")
-                }
-                else{
-                    window.location.replace('./conta.html')
-                }
+                window.location.replace('./success.html')
             }
             else{
-                localStorage.setItem("loggedIn", "false")
-                senhaIncorreta.setAttribute("style", "display: block;")
-                load.setAttribute('class', 'lds-ellipsis')
-                botao.setAttribute('class', 'enviar')
-            }*/
+                window.location.replace('./not-allowed.html')
+            }
         }
 
         if(this.status == 400){
-            //localStorage.setItem("loggedIn", "false")
             console.log("sem sucesso , status == 400")
         }
     }
