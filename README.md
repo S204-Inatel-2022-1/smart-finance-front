@@ -5,6 +5,6 @@
 <p align="center">
   Para isso o projeto visa, através de IA, conseguir medir os valores das bolsa e deixar disponiveis seus dados para os usuarios, permitindo que o mesmo possa consultar e ter uma previsão da empresa de sua escolha, cadastrada no banco de dados.
 </p>
+https://img.shields.io/badge/Status-Em%20andamento-blue
 
-?style=plastic&logo=appveyor
 
