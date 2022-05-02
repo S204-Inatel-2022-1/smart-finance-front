@@ -2,7 +2,8 @@ var urlCadastro = 'http://127.0.0.1:3000/cadastro'
 var urlLogin = 'http://127.0.0.1:3000/login'
 var xhr = new XMLHttpRequest();
 
-//mudar o estado de login para cadastro e vice-verso
+
+//Mudar o estado de login para cadastro e vice-verso
 const btn_Entrar = document.querySelector("#op1")
 const btn_Cadastrar = document.querySelector("#op2")
 const body = document.querySelector("body")
@@ -17,6 +18,18 @@ const cadastrar = document.querySelector('#cadastrar')
 const emailLogin = document.querySelector('#emailLogin')
 const senhaLogin = document.querySelector('#senhaLogin')
 const entrar = document.querySelector('#entrar')
+
+//troca de senha
+
+
+//Mudar o estado de login para cadastro e vice-verso
+btn_Entrar.addEventListener("click", function(){ //Eventos
+    body.className = "Entrar-js" //Body recebe uma classe com nome   
+})
+
+btn_Cadastrar.addEventListener("click", function(){ //Eventos
+    body.className = "Cadastrar-js" //Body recebe uma classe com nome   
+})
 
 //cadastro
 cadastrar.addEventListener('click', (event) => {
@@ -68,13 +81,4 @@ entrar.addEventListener('click', (event) => {
             senha: senhaLogin.value
         }
     ))
-})
-
-//Mudar o estado de login para cadastro e vice-verso
-btn_Entrar.addEventListener("click", function(){ //Eventos
-    body.className = "Entrar-js" //Body recebe uma classe com nome   
-})
-
-btn_Cadastrar.addEventListener("click", function(){ //Eventos
-    body.className = "Cadastrar-js" //Body recebe uma classe com nome   
 })
