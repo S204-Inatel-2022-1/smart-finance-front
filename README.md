@@ -7,9 +7,10 @@
   </p>
 </section>
 
-<img src = "https://img.shields.io/badge/Desenvolvido-JavaScript-blue">
-<img src="https://img.shields.io/badge/Status-Em%20andamento-yellow"/>
-
+<p align="center">
+	<img src = "https://img.shields.io/badge/Desenvolvido-JavaScript-blue">
+	<img src="https://img.shields.io/badge/Status-Em%20andamento-yellow"/>
+</p>
 <section class="tabela-de-conteudo" id="tabela-de-conteudo">
 <h4 align="center"> 
 	Tabela de conteúdos
