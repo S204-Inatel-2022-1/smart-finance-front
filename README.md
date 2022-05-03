@@ -1,4 +1,3 @@
-## :objetivo: 
 <h1 align="center">Smart Finance</h1>
   <p align="center">
     A Bolsa de Valores é um grande mercado onde acontecem as negociações de ações, títulos e outros ativos. Por isso, ela é o ponto de encontro entre as empresas e os investidores que desejam comprar ou vender suas ações.
@@ -17,76 +16,109 @@
 </h4>
 
 <p align="center">
- <a href="#objetivo">Objetivo</a> •
- <a href="#roadmap">Roadmap</a> • 
- <a href="#tecnologias">Tecnologias</a> • 
- <a href="#contribuicao">Contribuição</a> • 
- <a href="#licenc-a">Licença</a> • 
- <a href="#autor">Autor</a>
+ <a href="#-Recursos">Recursos</a> •
+ <a href="#-Demonstração">Demonstração</a> • 
+ <a href="#-Pré-requisitos">Pré-requisitos</a> • 
+ <a href="#-Tecnologias">Tecnologias</a> • 
+ <a href="#-Licença">Licença</a> • 
 </p>
 </section>
 <h4 align="center"> 
 	🚧  Projeto 🚀 Em construção...  🚧
 </h4>
 
+## 💻 Recursos
 
+- [x] Langing Page
+- [x] Cadastro de cliente
+- [x] Cadastro de produtos
+- [x] Dashboard
+- [x] Tela de Consultoria
+- [x] API para operar o BD
+- [x] API para comunicar com a IA
+
+## 🎨 Demonstração
 * Demonstração de aplicação: [https://smart-finance-front.herokuapp.com/](https://smart-finance-front.herokuapp.com/)
 
-## Getting Started
 
-These instructions will get you a copy of the full project up and running on your local machine for development and testing purposes.
+## 🚀 Como executar o projeto
 
-The project can be built with npm or yarn, so choose one of the approach bellow in case you don't have any installed on your system.
+Este projeto é divido em três partes:
+1. Backend (pasta server) 
+2. Frontend (pasta web)
 
-* **Npm** is distributed with Node.js which means that when you download Node.js, you automatically get npm installed on your computer. [Download Node.js](https://nodejs.org/en/download/)
+💡O Frontend precisam que o Backend esteja sendo executado para funcionar.
 
-## Setting up Databases and Services
+### Pré-requisitos
 
-The project uses [PostgreSQL](https://www.postgresql.org), [MongoDB](https://www.mongodb.com) and [Redis](https://redis.io).
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-I recommend use [Docker](https://www.docker.com) to install and run the databases and services above.
+#### 🎲 Rodando o Backend (servidor)
 
-## How to Install
+```bash
 
-### Backend (API)
+# Clone este repositório
+$ git clone https://github.com/S204-Inatel-2022-1/smart-finance.git
 
-* To download the project follow the instructions bellow:
+# Acesse a pasta do projeto no terminal/cmd
+$ cd README-smart-finance
 
-```
-1. git clone https://github.com/tgmarinho/meetapp-api.git
-2. cd meetapp-api
-```
+# Vá para a pasta server
+$ cd server
 
-* Install the dependencies and start the server:
+# Instale as dependências
+$ npm install
 
-```
-3. yarn install
-4. yarn dev
-```
-
-or
-
-```
-3. npm install
-4. npm dev
-```
-
-Rename the file `.env.example` to `.env` and create yours environment variables and replace them. It's is very important for running the server.
-
-Also, I'm sending the Insomnia file for call the API, download it [here](https://github.com/tgmarinho/meetapp/blob/master/Insomnia_2019-10-27.json).
-
-### Frontend (React)
-
-* To download the project follow the instructions bellow:
+# Execute a aplicação em modo de desenvolvimento
+$ npm run start
 
 ```
-1. git clone https://github.com/tgmarinho/meetapp-react.git
-2. cd meetapp-react
-```
 
-* Install the dependencies and start the project:
+#### 🧭 Rodando a aplicação web (Frontend)
 
-```
-3. npm install
-4. npm start
-```
+```bash
+
+# Clone este repositório
+$ git clone https://github.com/S204-Inatel-2022-1/smart-finance-front.git
+
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd README-smart-finance-front
+
+# Vá para a pasta da aplicação Front End
+$ Rodar arquivo index.html
+
+``` 
+---
+
+## 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+#### **Website**  ([JavaScript](https://www.javascript.com/))
+
+-   **[HTML](https://html.com/)**
+-   **[CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)**
+-   **[Python](https://www.python.org/)**
+
+> Veja o arquivo  [Clicar](https://github.com/S204-Inatel-2022-1/smart-finance-front.git)
+
+#### **Server**  ([NodeJS](https://nodejs.org/en/))
+
+-   **[Node](https://nodejs.org/en/)**
+-   **[MongoDB](https://www.mongodb.com/cloud/atlas/lp/try2?utm_content=controlhterms&utm_source=google&utm_campaign=gs_americas_brazil_search_core_brand_atlas_desktop&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624308&adgroup=115749706023&gclid=CjwKCAjwgr6TBhAGEiwA3aVuITkbPlEXyKaZh-cJocBXWMQ5MrAV7vsNanm7VcZPkz1noYPsdzNLbhoCd_AQAvD_BwE)**
+
+> Veja o arquivo  [Clicar](https://github.com/S204-Inatel-2022-1/smart-finance.git)
+
+**Utilitários**
+
+-   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)** 
+-   Teste de API:  **[Karate](https://github.com/karatelabs/karate)**
+-   Ícones:  **[Feather Icons](https://feathericons.com/)**,  **[Font Awesome](https://fontawesome.com/)**
+
+---
+
+## 📝 Licença
+
+Este projeto esta sobe a licença [MIT](./LICENSE).
