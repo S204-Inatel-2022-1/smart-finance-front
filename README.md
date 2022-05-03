@@ -10,6 +10,10 @@
 <p align="center">
 	<img src = "https://img.shields.io/badge/Desenvolvido-JavaScript-blue">
 	<img src="https://img.shields.io/badge/Status-Em%20andamento-yellow"/>
+	 <a href="https://github.com/tgmarinho/README-ecoleta/commits/master">
+  </a>
+    
+   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
 <section class="tabela-de-conteudo" id="tabela-de-conteudo">
 <h4 align="center"> 
