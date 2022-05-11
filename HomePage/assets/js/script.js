@@ -1,5 +1,5 @@
-var urlCadastro = 'http://127.0.0.1:3000/cadastro'
-var urlLogin = 'http://127.0.0.1:3000/login'
+var urlCadastro = 'https://smart-finance-back.herokuapp.com/cadastro'
+var urlLogin = 'https://smart-finance-back.herokuapp.com/login'
 var xhr = new XMLHttpRequest();
 
 
@@ -34,18 +34,26 @@ btn_Cadastrar.addEventListener("click", function(){ //Eventos
 //cadastro
 cadastrar.addEventListener('click', (event) => {
     event.preventDefault()
+/*
+    try{*/
+        xhr.open("POST", url, true)
+        xhr.setRequestHeader('Content-Type', 'application/json')
+        xhr.send(JSON.stringify(
+            {
+                nome: usuario.value,
+                email: emailUsuario.value, 
+                senha: senhaUsuario.value
+            }
+        ))
 
-    xhr.open("POST", urlCadastro, true)
-    xhr.setRequestHeader('Content-Type', 'application/json')
-    xhr.send(JSON.stringify(
-        {
-            nome: usuario.value,
-            email: emailUsuario.value, 
-            senha: senhaUsuario.value
-        }
-    ))
+        console.log('user registered')
 
-    console.log('user registered')
+        //window.location.replace("./dashboard.html")
+/*  }
+    catch(e)
+    {
+        console.log(e)
+    }*/
 })
 
 //login
@@ -61,10 +69,12 @@ entrar.addEventListener('click', (event) => {
             if(data == 'Success'){
                 localStorage.setItem("loggedIn", "true")
                 
-                window.location.replace('./success.html')
+                window.location.replace('./dashboard.html')
             }
             else{
-                window.location.replace('./not-allowed.html')
+                localStorage.setItem("loggedIn", "false")
+                const senhaIncorreta = document.querySelector('.incorreto')
+                senhaIncorreta.setAttribute('style', 'display: block; color: red; font-weight: 600; text-align: center;')
             }
         }
 
