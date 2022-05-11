@@ -34,26 +34,21 @@ btn_Cadastrar.addEventListener("click", function(){ //Eventos
 //cadastro
 cadastrar.addEventListener('click', (event) => {
     event.preventDefault()
-/*
-    try{*/
-        xhr.open("POST", url, true)
-        xhr.setRequestHeader('Content-Type', 'application/json')
-        xhr.send(JSON.stringify(
-            {
-                nome: usuario.value,
-                email: emailUsuario.value, 
-                senha: senhaUsuario.value
-            }
-        ))
 
-        console.log('user registered')
+    xhr.open("POST", urlCadastro, true)
+    xhr.setRequestHeader('Content-Type', 'application/json')
+    xhr.send(JSON.stringify(
+        {
+            nome: usuario.value,
+            email: emailUsuario.value, 
+            senha: senhaUsuario.value
+        }
+    ))
 
-        //window.location.replace("./dashboard.html")
-/*  }
-    catch(e)
-    {
-        console.log(e)
-    }*/
+    console.log('user registered')
+
+    window.location.replace('./dashboard.html')
+    localStorage.setItem("loggedIn", "true")
 })
 
 //login
