@@ -68,10 +68,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 $ git clone https://github.com/S204-Inatel-2022-1/smart-finance.git
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd README-smart-finance
-
-# Vá para a pasta server
-$ cd server
+$ cd smart-finance
 
 # Instale as dependências
 $ npm install
@@ -88,11 +85,17 @@ $ npm run start
 # Clone este repositório
 $ git clone https://github.com/S204-Inatel-2022-1/smart-finance-front.git
 
-# Acesse a pasta do projeto no seu terminal/cmd
-$ cd README-smart-finance-front
+# Acesse a pasta do projeto no terminal/cmd
+$ cd smart-finance
 
-# Vá para a pasta da aplicação Front End
-$ Rodar arquivo index.html
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$ node index.js
+
+# Acesse a URL no seu navegador
+http://localhost:5000/
 
 ``` 
 ---
