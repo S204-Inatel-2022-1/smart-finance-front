@@ -3,7 +3,7 @@
 
 describe('Cenário de teste: Testar funcionalidades do site Smart Finance', () => {
 
-    it.skip ('Caso de teste: Registrar um usuário com sucesso', () => {
+    it ('Caso de teste: Registrar um usuário com sucesso', () => {
 
         cy.visit('https://smart-finance-front.herokuapp.com/login.html');
         cy.get('#nomeCadastro').type('Usuário de teste');
@@ -24,6 +24,16 @@ describe('Cenário de teste: Testar funcionalidades do site Smart Finance', () =
         cy.get('#emailLogin').type('usuarioTeste@coldplay.com');
         cy.get('#senhaLogin').type('testeColdplay');
         cy.get('#entrar').click();
-        cy.get('.nav-btn').should('be.visible');
+        cy.get('.nav-btn').should('exist');
+    })
+
+    it ('Caso de teste: Não logar um usuário com sucesso', () => {
+
+        cy.visit('https://smart-finance-front.herokuapp.com/login.html');
+        cy.get('#op1').click();
+        cy.get('#emailLogin').type('erro');
+        cy.get('#senhaLogin').type('erro');
+        cy.get('#entrar').click();
+        cy.get('.incorreto').should('exist');
     })
 })
