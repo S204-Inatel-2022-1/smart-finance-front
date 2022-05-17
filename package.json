@@ -1,0 +1,22 @@
+{
+  "name": "smart-finance-front",
+  "version": "1.0.0",
+  "description": "a frontend application to compare stock prices via api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/S204-Inatel-2022-1/smart-finance-front.git"
+  },
+  "author": "Codeplay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/S204-Inatel-2022-1/smart-finance-front/issues"
+  },
+  "homepage": "https://github.com/S204-Inatel-2022-1/smart-finance-front#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

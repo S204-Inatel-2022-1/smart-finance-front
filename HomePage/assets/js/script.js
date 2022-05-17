@@ -1,7 +1,8 @@
-var urlCadastro = 'http://127.0.0.1:3000/cadastro'
-var urlLogin = 'http://127.0.0.1:3000/login'
+var urlCadastro = 'https://smart-finance-back.herokuapp.com/cadastro'
+var urlLogin = 'https://smart-finance-back.herokuapp.com/login'
 var xhr = new XMLHttpRequest();
 
+//  VARIÁVEIS
 
 //Mudar o estado de login para cadastro e vice-verso
 const btn_Entrar = document.querySelector("#op1")
@@ -20,7 +21,12 @@ const senhaLogin = document.querySelector('#senhaLogin')
 const entrar = document.querySelector('#entrar')
 
 //troca de senha
+const esqueceu = document.querySelector('#modal-enviar')
 
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+//  CÓDIGOS
 
 //Mudar o estado de login para cadastro e vice-verso
 btn_Entrar.addEventListener("click", function(){ //Eventos
@@ -46,6 +52,12 @@ cadastrar.addEventListener('click', (event) => {
     ))
 
     console.log('user registered')
+
+    localStorage.setItem("loggedIn", "true")
+    
+    setTimeout(() => {
+        window.location.replace('./dashboard.html')
+    }, 2000)
 })
 
 //login
@@ -61,10 +73,12 @@ entrar.addEventListener('click', (event) => {
             if(data == 'Success'){
                 localStorage.setItem("loggedIn", "true")
                 
-                window.location.replace('./success.html')
+                window.location.replace('./dashboard.html')
             }
             else{
-                window.location.replace('./not-allowed.html')
+                localStorage.setItem("loggedIn", "false")
+                const senhaIncorreta = document.querySelector('.incorreto')
+                senhaIncorreta.setAttribute('style', 'display: block; color: red; font-weight: 600; text-align: center;')
             }
         }
 
@@ -81,4 +95,19 @@ entrar.addEventListener('click', (event) => {
             senha: senhaLogin.value
         }
     ))
+})
+
+//troca de senha
+esqueceu.addEventListener('click', (event) => {
+    event.preventDefault()
+
+    const email = document.querySelector('#modal-email')
+
+    xhr.open("POST", "http://localhost:3000/mail");
+    xhr.setRequestHeader('Content-Type', 'application/json')
+    xhr.send(JSON.stringify(
+        {
+            email: email.value
+        }
+    ));
 })

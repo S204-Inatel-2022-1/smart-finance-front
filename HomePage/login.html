@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="assets/css/login.css" />
 
  </head>
+ <style>
+     .incorreto{
+         display: none;
+     }
+ </style>
  <body>
     <li class="has-sub">
         <li><a class="VoltarMenu" href="index.html"><strong>Voltar</strong></a></li>
@@ -97,7 +102,6 @@
                         </a>
                     </ul> Social
                 </div> -->
-                <p class="descricao d2">ou use seu email para registrar:</p>
                 <!--Inputs do login 2-->
                 <form class="formulario"> 
                     <label class="label-input" for="">
@@ -108,12 +112,31 @@
                         <i class="fa-solid fa-lock icon-Modify"></i>
                         <input id="senhaLogin" type="password" class="Senha" placeholder="Senha"> <!--Input Senha-->
                     </label>
-                    <a class="password" href="#">Esqueceu sua senha?</a>
+                    <p class="incorreto">Usuário ou senha incorreto</p>
+                    <a id="esqueceu" class="password" href="#">Esqueceu sua senha?</a>
                     <button id="entrar" class="botao1 btn-Segundo">Entrar</button>
+                    <a href="#abrirModal">Open Modal</a>
                 </form>
             </div>
         </div>
     </div>
+
+    <div class="modal-container">
+        <div id="abrirModal" class="modal">
+            <a href="#fechar" title="Fechar" class="fechar">x</a>
+            <h2>Esqueceu a senha?</h2>
+            <fieldset>
+                <form>
+                    <label>
+                        E-mail:
+                    </label>
+                    <input id="modal-email" type="email" placeholder="Digite seu e-mail..." />
+                    <button id="modal-enviar" type="submit">Enviar</button>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+
 
     <!--Plano de fundo-->
     <div class="waveWrapper waveAnimation">
@@ -129,8 +152,7 @@
       </div>
       <!-- --------------------------- -->
 
-      <script type="text/javascript" src="assets/js/login.js"></script>
-      <script type="text/javascript" src="assets/js/cadastro.js"></script>
+      <script src="assets/js/script.js" type="text/javascript"></script>
      
  </body>
  </html>
