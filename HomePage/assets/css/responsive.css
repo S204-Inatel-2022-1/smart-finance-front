@@ -33,6 +33,7 @@
         flex: 0 0 33.333333%;
         max-width: 33.333333%;
     }
+    
 
     #coin_distribution-wrapper {
         margin-top: -68px;
@@ -117,12 +118,12 @@
 
     /* sidebar */
     .sidebar-menu {
-        width: 365px;
+        width: 280px;
     }
     .nav-btn {
         position: fixed;
         z-index: 99;
-        left: 363px;
+        left: 280px;
         background: rgb(137,  255, 137);
         padding: 14px;
         top: 0;
@@ -174,12 +175,12 @@
     }
     /* sidebar */
     .sidebar-menu {
-        width: 306px;
+        width: 280px;
     }
     .nav-btn {
         position: fixed;
         z-index: 99;
-        left: 304px;
+        left: 280px;
         background: rgb(137,  255, 137);
         padding: 14px;
         top: 0;
@@ -277,6 +278,7 @@
     .seo-fact #seolinechart4 {
         max-width: 144px;
     }
+    
 }
 
 /* Normal desktop :991px. */
@@ -285,12 +287,12 @@
     /* dashboard one */
     /* sidebar */
     .sidebar-menu {
-        width: 306px;
+        width: 280px;
     }
     .nav-btn {
         position: fixed;
         z-index: 99;
-        left: 304px;
+        left: 280px;
         background: rgb(137,  255, 137);
         padding: 14px;
         top: 0;
@@ -430,12 +432,12 @@
     }
     /* sidebar */
     .sidebar-menu {
-        width: 365px;
+        width: 280px;
     }
     .nav-btn {
         position: fixed;
         z-index: 99;
-        left: 363px;
+        left: 280px;
         background: rgb(137,  255, 137);
         padding: 14px;
         top: 0;
@@ -545,12 +547,12 @@
     /* dashboard one */
     /* sidebar */
     .sidebar-menu {
-        width: calc(100% - 48px);
+        width: 280px;
     }
     .nav-btn {
         position: fixed;
         z-index: 99;
-        right: 0;
+        left: 280px;
         background: rgb(137,  255, 137);
         padding: 14px;
         top: 0;
