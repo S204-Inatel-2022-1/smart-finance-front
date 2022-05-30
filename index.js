@@ -1,6 +1,5 @@
-import express from express()
+const express = require('express')
 const app = express()
-import path from 'path'
 //const router = express.Router();
 
 const port = process.env.PORT || 5000
