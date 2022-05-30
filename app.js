@@ -6,6 +6,12 @@ import cors from 'cors'
 var app = express();
 app.listen(5501, () => console.log('Conectado'))
 
+app.use(express.static(__dirname+'/HomePage/'));
+
+app.get('/',function(req,res){
+  res.sendFile('index.html', { root: 'HomePage' });
+});
+
 app.use((req, res, next) => {
 	//Qual site tem permissão de realizar a conexão, no exemplo abaixo está o "*" indicando que qualquer site pode fazer a conexão
     res.header("Access-Control-Allow-Origin", "*");
