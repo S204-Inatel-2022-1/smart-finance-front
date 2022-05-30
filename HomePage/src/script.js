@@ -1,5 +1,5 @@
 var urlCadastro = 'https://smart-finance-back.herokuapp.com/cadastro'
-var urlLogin = 'https://smart-finance-back.herokuapp.com/login'
+var urlLogin = 'http://localhost:3000/login'
 var xhr = new XMLHttpRequest();
 
 //  VARIÁVEIS
@@ -54,6 +54,7 @@ cadastrar.addEventListener('click', (event) => {
     console.log('user registered')
 
     localStorage.setItem("loggedIn", "true")
+    localStorage.setItem("user", usuario.value)
     
     setTimeout(() => {
         window.location.replace('./dashboard.html')
@@ -70,15 +71,18 @@ entrar.addEventListener('click', (event) => {
         if (this.status == 200) {
             const data = this.responseText;
 
-            if(data == 'Success'){
-                localStorage.setItem("loggedIn", "true")
-                
-                window.location.replace('./dashboard.html')
-            }
-            else{
+            if(data == 'Not allowed'){
                 localStorage.setItem("loggedIn", "false")
                 const senhaIncorreta = document.querySelector('.incorreto')
                 senhaIncorreta.setAttribute('style', 'display: block; color: red; font-weight: 600; text-align: center;')
+            }
+            else{
+
+                localStorage.setItem("loggedIn", "true")
+                localStorage.setItem("user", data)
+                
+                window.location.replace('./dashboard.html')
+
             }
         }
 
