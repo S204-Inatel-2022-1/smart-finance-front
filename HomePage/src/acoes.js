@@ -10,7 +10,7 @@ submit.addEventListener('click', (event) => {
     const input = document.querySelector('#acao')
     const acao = input.value
 
-    xhr.open("POST", "http://localhost:3000/comprar-acoes");
+    xhr.open("POST", "https://smart-finance-back.herokuapp.com/comprar-acoes");
     xhr.setRequestHeader('Content-Type', 'application/json')
     xhr.send(JSON.stringify(
         {
@@ -37,5 +37,5 @@ xhrGet.onreadystatechange = function() {
     }
 }
 
-xhrGet.open('GET', 'http://localhost:3000/comprar-acoes')
+xhrGet.open('GET', 'https://smart-finance-back.herokuapp.com/comprar-acoes')
 xhrGet.send()

@@ -1,5 +1,5 @@
 var urlCadastro = 'https://smart-finance-back.herokuapp.com/cadastro'
-var urlLogin = 'http://localhost:3000/login'
+var urlLogin = 'https://smart-finance-back.herokuapp.com/login'
 var xhr = new XMLHttpRequest();
 
 //  VARIÁVEIS
