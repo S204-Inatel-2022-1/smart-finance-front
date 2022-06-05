@@ -1,7 +1,7 @@
 const label = 'EXI';
 
 async function getData(label){
-    const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${label}&apikey=0ZWXW9IYMFL3DR7W`;
+    const url = `https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=${label}&apikey=0ZWXW9IYMFL3DR7W`;
 
     const options = {
         method: 'GET',
@@ -15,9 +15,9 @@ async function getData(label){
     const dat = await fetch_response.json();
 
     console.log(dat["Meta Data"]["2. Symbol"]);
-    console.log(dat["Time Series (Daily)"]);
+    console.log(dat["Monthly Time Series"]);
 
-    let arr = Object.entries(dat["Time Series (Daily)"]);
+    let arr = Object.entries(dat["Monthly Time Series"]);
     console.log(arr[0][0]);
     console.log(arr[0][1]["1. open"]);
     return arr;
@@ -72,6 +72,17 @@ window.onload = function () {
             dataPoints : dataPoints1
         }]
         }],
+        rangeSelector: {
+            selectedRangeButtonIndex:0,
+            buttons: [{
+                range: 4, 
+                rangeType: "month",
+                label: "Trimestral"
+              },{            
+                rangeType: "all",
+                label: "Mostrar Tudo" //Change it to "All"
+              }]
+        },
         navigator: {
         data: [{
             color: "green",
@@ -98,9 +109,9 @@ window.onload = function () {
         }
         stockChart.render();
 
-        // document.getElementById("moveNavigatorToTop").addEventListener("click", function(){
-        //     stockChart.navigator.set("verticalAlign", "top");
-        // });
+        document.getElementById("moveNavigatorToTop").addEventListener("click", function(){
+            stockChart.navigator.set("verticalAlign", "top");
+        });
         
         };
 
@@ -155,6 +166,17 @@ function updateChart(label){
         dataPoints : dataPoints1
     }]
     }],
+    rangeSelector: {
+        selectedRangeButtonIndex:0,
+        buttons: [{
+            range: 4, 
+            rangeType: "month",
+            label: "Trimestral"
+          },{            
+            rangeType: "all",
+            label: "Mostrar Tudo" //Change it to "All"
+          }]
+    },
     navigator: {
     data: [{
         color: "green",
@@ -181,9 +203,9 @@ function updateChart(label){
     }
     stockChart.render();
 
-    // document.getElementById("moveNavigatorToTop").addEventListener("click", function(){
-    //     stockChart.navigator.set("verticalAlign", "top");
-    // });
+    document.getElementById("moveNavigatorToTop").addEventListener("click", function(){
+        stockChart.navigator.set("verticalAlign", "top");
+    });
     
     };
 

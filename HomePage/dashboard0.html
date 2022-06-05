@@ -23,6 +23,11 @@
     <!-- modernizr css -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
+    <script>
+        var bleep = new Audio();
+        bleep.src = "click.mp3";
+    </script>
+
     <style type="text/css">
         .chartBox{
             width: 600px;
@@ -106,7 +111,7 @@
                         <div class="search-box pull-left">
                             <form action="">
                                 <input list="historico" type="text" id="pesquisa" name="pesquisa" placeholder="Pesquisar..." required>
-                                <i ><button id="btnP" class="ti-search"></button></i>
+                                <i ><button id="btnP" class="ti-search" onmousedown="bleep.play()"></button></i>
                                 <!-- <i class="ti-search"></i> -->
 
                                 <datalist id="historico">
@@ -118,21 +123,22 @@
                                     <option value="CDR"></option>
                                 </datalist>
                             </form>
+                            <ul id="list"></ul>
                             <script>
                                 const nome = document.getElementById("pesquisa")
                                 const form = document.getElementById("btnP")
 
                                 btnP.addEventListener('click', function(e){
                                     e.preventDefault();
-                                    console.log(nome.value)
-                                    updateChart(nome.value)
+                                    console.log(nome.value.toUpperCase())
+                                    updateChart(nome.value.toUpperCase())
                                     
                                 })
 
                             </script>
                         </div>
                     </div>    
-                    <div class="col-sm-2">
+                    <!-- <div class="col-sm-2">
                         <div class="form-group">
                             <label for="example-date-input" class="col-form-label"><strong>Data de Inicio:</strong></label>
                             <input class="form-control" type="date" value="2022-01-01" id="example-date-input">
@@ -146,7 +152,7 @@
                             <input class="form-control" type="date" value="2022-03-05" id="example-date-input">
                         </div>
                     </div>
-                        
+                         -->
                     
                     <!-- profile info & task notification -->
                     <div class="col-md col-sm-4 clearfix">
@@ -188,72 +194,84 @@
                     <div class="row"> 
                     <!-- overview area end -->
                     <!-- market value area start -->
-                    <div class="row mt-5 mb-5">
+                    <div class="row col-12 mt-3 mb-3">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-sm-flex justify-content-between align-items-center">
-                                        <h4 class="header-title mb-0">Market Value And Trends</h4>
-                                        <select class="custome-select border-0 pr-3">
-                                            <option selected>Last 24 Hours</option>
-                                            <option value="0">01 July 2018</option>
-                                        </select>
+                                        <h4 class="header-title mb-0">Catálogo</h4>
                                     </div>
                                     <div class="market-status-table mt-4">
                                         <div class="table-responsive">
                                             <table class="dbkit-table">
                                                 <tr class="heading-td">
                                                     
-                                                    <td class="coin-name">Empresas</td>
-                                                    <td class="buy">Buy</td>
-                                                    <td class="sell">Sells</td>
-                                                    <td class="trends">Trends</td>
-                                                    <td class="attachments">Attachments</td>
-                                                    <td class="stats-chart">Stats</td>
+                                                    <td class="coin-name"><strong>Empresas</strong></td>
+                                                    <td class="name"><strong>Nomes</strong></td>
+                                                    <td class="buy"><strong>Câmbio</strong></td>
+                                                    <td class="sell"><strong>Data</strong></td>
+                                                    <td class="attachments"><strong>Status</strong></td>
+                                                    <td class="trends"><strong>Selecionar</strong></td>
                                                 </tr>
                                                 <tr>
-                                                    
-                                                    <td class="coin-name">ABEV3</td>
-                                                    <td class="buy">30% <img src="assets/images/icon/market-value/triangle-down.png" alt="icon"></td>
-                                                    <td class="sell">20% <img src="assets/images/icon/market-value/triangle-up.png" alt="icon"></td>
-                                                    <td class="trends"><img src="assets/images/icon/market-value/trends-up-icon.png" alt="icon"></td>
-                                                    <td class="attachments">$ 56746,857</td>
-                                                    <td class="stats-chart">
+                
+                                                    <td class="coin-name" id="nome1">--</td>
+                                                    <td class="name" >--<span id="emp1" style="font-size: 11px; text-align:center;"></span></td>
+                                                    <td class="buy" id="low1">--</td>
+                                                    <td class="sell" id="high1">--</td>
+                                                    <td class="attachments" ><img id="close1" src="assets/images/icon/market-value/inativo2.png" alt="icon"></td>
+                                                    <td class="trends" ><button type="button" id="botao1" class="btn btn-outline-success mb-3" onmousedown="bleep.play()">Definir</button></td>
+                                                    <!-- <td class="stats-chart">
                                                         <canvas id="mvaluechart"></canvas>
-                                                    </td>
+                                                    </td> -->
                                                 </tr>
                                                 <tr>
                                                     
-                                                    <td class="coin-name">AZUL4</td>
-                                                    <td class="buy">30% <img src="assets/images/icon/market-value/triangle-down.png" alt="icon"></td>
-                                                    <td class="sell">20% <img src="assets/images/icon/market-value/triangle-up.png" alt="icon"></td>
-                                                    <td class="trends"><img src="assets/images/icon/market-value/trends-down-icon.png" alt="icon"></td>
-                                                    <td class="attachments">$ 56746,857</td>
-                                                    <td class="stats-chart">
+                                                    <td class="coin-name" id="nome2">--</td>
+                                                    <td class="name">--<span id="emp2" style="font-size: 11px; text-align:center;"></span></td>
+                                                    <td class="buy" id="low2">--</td>
+                                                    <td class="sell" id="high2">--</td>
+                                                    <td class="attachments" ><img id="close2" src="assets/images/icon/market-value/inativo2.png" alt="icon"></td>
+                                                    <td class="trends" ><button type="button" id="botao2" class="btn btn-outline-success mb-3" onmousedown="bleep.play()">Definir</button></td>
+                                                    <!-- <td class="stats-chart">
                                                         <canvas id="mvaluechart2"></canvas>
-                                                    </td>
+                                                    </td> -->
                                                 </tr>
                                                 <tr>
                                                     
-                                                    <td class="coin-name">AMER3</td>
-                                                    <td class="buy">30% <img src="assets/images/icon/market-value/triangle-down.png" alt="icon"></td>
-                                                    <td class="sell">20% <img src="assets/images/icon/market-value/triangle-up.png" alt="icon"></td>
-                                                    <td class="trends"><img src="assets/images/icon/market-value/trends-up-icon.png" alt="icon"></td>
-                                                    <td class="attachments">$ 56746,857</td>
-                                                    <td class="stats-chart">
+                                                    <td class="coin-name" id="nome3">--</td>
+                                                    <td class="name">--<span id="emp3" style="font-size: 11px; text-align:center;"></span></td>
+                                                    <td class="buy" id="low3">--</td>
+                                                    <td class="sell" id="high3">--</td>
+                                                    <td class="attachments" ><img id="close3" src="assets/images/icon/market-value/inativo2.png" alt="icon"></td>
+                                                    <td class="trends" ><button type="button" id="botao3" class="btn btn-outline-success mb-3" onmousedown="bleep.play()">Definir</button></td>
+                                                    <!-- <td class="stats-chart">
                                                         <canvas id="mvaluechart3"></canvas>
-                                                    </td>
+                                                    </td> -->
                                                 </tr>
                                                 <tr>
                                                     
-                                                    <td class="coin-name">B3SA3</td>
-                                                    <td class="buy">30% <img src="assets/images/icon/market-value/triangle-down.png" alt="icon"></td>
-                                                    <td class="sell">20% <img src="assets/images/icon/market-value/triangle-up.png" alt="icon"></td>
-                                                    <td class="trends"><img src="assets/images/icon/market-value/trends-up-icon.png" alt="icon"></td>
-                                                    <td class="attachments">$ 56746,857</td>
-                                                    <td class="stats-chart">
+                                                    <td class="coin-name" id="nome4">--</td>
+                                                    <td class="name">--<span id="emp4" style="font-size: 11px; text-align:center;"></span></td>
+                                                    <td class="buy" id="low4">--</td>
+                                                    <td class="sell" id="high4">--</td>
+                                                    <td class="attachments" ><img id="close4" src="assets/images/icon/market-value/inativo2.png" alt="icon"></td>
+                                                    <td class="trends" ><button type="button" id="botao4" class="btn btn-outline-success mb-3" onmousedown="bleep.play()">Definir</button></td>
+                                                    <!-- <td class="stats-chart">
                                                         <canvas id="mvaluechart4"></canvas>
-                                                    </td>
+                                                    </td> -->
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td class="coin-name" id="nome5">--</td>
+                                                    <td class="name">--<span id="emp5" style="font-size: 11px; text-align:center;"></span></td>
+                                                    <td class="buy" id="low5">--</td>
+                                                    <td class="sell" id="high5">--</td>
+                                                    <td class="attachments" ><img id="close5" src="assets/images/icon/market-value/inativo2.png" alt="icon"></td>
+                                                    <td class="trends" ><button type="button" id="botao5" class="btn btn-outline-success mb-3" onmousedown="bleep.play()">Definir</button></td>
+                                                    <!-- <td class="stats-chart">
+                                                        <canvas id="mvaluechart4"></canvas>
+                                                    </td> -->
                                                 </tr>
                                             </table>
                                         </div>
@@ -262,26 +280,27 @@
                             </div>
                         </div>
                     </div>
+                    <script type="module" src="index2.js"></script>
                         
                     <!-- Social Campain area end -->
                     <!-- Statistics area start -->
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
                                 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
                                 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.stock.min.js"></script>
                                 
                                 <script type="text/javascript" src="src/graficos.js"></script>
-
+                                
                                 <div id="chartContainer" style="height: 450px; width: 100%;"></div>
 
-
+                                
                             </div>
                         </div>
                     </div>
                     <!-- Statistics area end -->
                     <!-- Advertising area start -->
-                    <div class="col-xl-3 col-ml-4 col-lg-4">
+                    <!-- <div class="col-xl-3 col-ml-4 col-lg-4">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Timeline</h4>
@@ -343,8 +362,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            </div>
+            </div> -->
+            </div> 
         <!-- main content area end -->
         <!-- footer area start-->
         <footer>
