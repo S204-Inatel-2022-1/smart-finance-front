@@ -46,7 +46,7 @@ cadastrar.addEventListener('click', (event) => {
     xhr.send(JSON.stringify(
         {
             nome: usuario.value,
-            email: emailUsuario.value, 
+            email: emailUsuario.value,
             senha: senhaUsuario.value
         }
     ))
@@ -71,7 +71,7 @@ entrar.addEventListener('click', (event) => {
         if (this.status == 200) {
             const data = this.responseText;
 
-            if(data == 'Not allowed'){
+            if(data == 'Not Allowed'){
                 localStorage.setItem("loggedIn", "false")
                 const senhaIncorreta = document.querySelector('.incorreto')
                 senhaIncorreta.setAttribute('style', 'display: block; color: red; font-weight: 600; text-align: center;')
@@ -102,6 +102,7 @@ entrar.addEventListener('click', (event) => {
 })
 
 //troca de senha
+/*
 esqueceu.addEventListener('click', (event) => {
     event.preventDefault()
 
@@ -115,4 +116,4 @@ esqueceu.addEventListener('click', (event) => {
         }
     ));
 })
-
+*/

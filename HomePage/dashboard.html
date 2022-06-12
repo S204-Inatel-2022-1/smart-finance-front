@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <!-- modernizr css -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
-
+    <script src="src/usuario.js" type="text/javascript"></script>
     <script>
         var bleep = new Audio();
         bleep.src = "click.mp3";
@@ -79,7 +79,7 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="dashboard0.html"><img src="assets/images/icon/logo3.png" alt="logo"></a>
+                    <a href=""><img src="assets/images/icon/logo3.png" alt="logo"></a>
                 </div>
             </div>
             <div class="main-menu">
@@ -87,8 +87,8 @@
                     <nav>
                         <ul class="metismenu" id="menu">
                             <li><a href="index.html"><i class="ti-layers-alt"></i> <span>Langing Page</span></a></li>
-                            <li><a href="dashboard0.html"><i class="ti-dashboard"></i> <span>Dashboard</span></a></li>
-                            <li><a href="consultoria0.html"><i class="ti-pie-chart"></i> <span>Consultoria</span></a></li>
+                            <li><a href="dashboard.html"><i class="ti-dashboard"></i> <span>Dashboard</span></a></li>
+                            <li><a href="consultoria.html"><i class="ti-pie-chart"></i> <span>Consultoria</span></a></li>
                             
                         </ul>
                     </nav>
@@ -180,11 +180,11 @@
                     <div class="col-sm-6 clearfix">
                         <div class="user-profile pull-right">
                             <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
-                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Usuário <i class="fa fa-angle-down"></i></h4>
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><span id="nome-usuario"></span><i class="fa fa-angle-down"></i></h4>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Message</a>
                                 <a class="dropdown-item" href="#">Settings</a>
-                                <a class="dropdown-item" href="#">Log Out</a>
+                                <a class="dropdown-item" onclick="logOut()" href="login.html">Log Out</a>
                             </div>
                         </div>
                     </div>
@@ -286,7 +286,7 @@
                     <!-- Statistics area start -->
                     <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-body">
+                            <div id="card-body" class="card-body">
                                 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
                                 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.stock.min.js"></script>
                                 
