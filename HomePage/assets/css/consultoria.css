@@ -1,0 +1,8 @@
+.my-data-table table{
+    width: 100%;
+}
+
+.my-data-table tbody tr{
+    display: flex;
+    justify-content: space-around;
+}
