@@ -51,6 +51,7 @@
 Este projeto é divido em três partes:
 1. Backend (pasta server) 
 2. Frontend (pasta web)
+3. Testes (pasta smartFinance-tests)
 
 💡O Frontend precisam que o Backend esteja sendo executado para funcionar.
 
@@ -96,6 +97,22 @@ $ node index.js
 
 # Acesse a URL no seu navegador
 http://localhost:5000/
+
+``` 
+
+#### :dart: Rodando os testes
+```bash
+# Acesse a pasta do projeto no terminal/cmd
+$ cd smart-finance-front/smartFinance-tests
+
+# Instale as dependências
+$ npm install
+
+# Abrir cypress pela linha de comando:
+$ ./node_modules/.bin/cypress open
+
+# Para rodar specs por linha de comando:
+./node_modules/.bin/cypress run --spec 'cypress/integration/smartFinance-tests/**/'
 
 ``` 
 ---
