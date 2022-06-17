@@ -9,7 +9,7 @@
 
 <p align="center">
 	<img src = "https://img.shields.io/badge/Desenvolvido-JavaScript-blue">
-	<img src="https://img.shields.io/badge/Status-Em%20andamento-yellow"/>
+	<img src = "https://img.shields.io/badge/Status-Concluido-green" />
 	 <a href="https://github.com/tgmarinho/README-ecoleta/commits/master">
   </a>
     
