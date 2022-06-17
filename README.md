@@ -139,7 +139,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 **Utilitários**
 
 -   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)** 
--   Teste de API:  **[Cypress](https://www.cypress.io/)**
+-   Testes:  **[Cypress](https://www.cypress.io/)**
 -   Ícones:  **[Feather Icons](https://feathericons.com/)**,  **[Font Awesome](https://fontawesome.com/)**
 
 ---
