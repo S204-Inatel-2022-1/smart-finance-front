@@ -122,7 +122,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 **Utilitários**
 
 -   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)** 
--   Teste de API:  **[Cypress, Pytest](https://github.com/karatelabs/karate)**
+-   Teste de API:  **[Cypress, Pytest]**
 -   Ícones:  **[Feather Icons](https://feathericons.com/)**,  **[Font Awesome](https://fontawesome.com/)**
 
 ---
