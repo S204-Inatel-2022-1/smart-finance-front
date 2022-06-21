@@ -9,11 +9,8 @@ let status = [];
 let exchange = [];
 let date = [];
 let i = 0; 
-let y1 = 0;
-let y2 = 0;
-let y3 = 0;
-let y4 = 0;
-let y5 = 0;
+
+let definir = 0;
 
 const cleanupWord = word => {
     return word.trim().toUpperCase();
@@ -28,7 +25,8 @@ const render = (word = "") => {
 
     word = cleanupWord(word);
     const filtered = filterData(word);
-    
+
+    definir = filtered.length;    
     s = [];
     n = [];
     status = [];
@@ -159,95 +157,92 @@ search.addEventListener("input", e => {
     const b5 = document.getElementById("botao5");
 
 
-    b1.addEventListener('click', function(e){
+
+    btnP.addEventListener('click', function(e){
         e.preventDefault();
-        if(s[0] == undefined){
-            console.log('Indefinido');
+        e.stopImmediatePropagation();
+        
+        if(definir != 0){
+            console.log(nome.value.toUpperCase());
+            updateChart(nome.value.toUpperCase());
+
         }
         else{
-            if(y1==0){
-                console.log(s[0]);
-                updateChart(s[0]);
-            }
-            if(y1 == 2){
-                y1 = -1;
-            }
-            console.log(y1);
-            y1 = y1+1;
+            window.alert('Essa Empresa não existe!!');
+        }
+        
+    })
+
+
+    b1.addEventListener('click', function(e){
+        e.stopImmediatePropagation();
+        if(s[0] == undefined){
+            console.log('Indefinido');
+            window.alert('Essa Empresa não existe!!');
+        }
+        else{
+
+            console.log(s[0]);
+            updateChart(s[0]);
+
         }
         
     });
     b2.addEventListener('click', function(e){
-        e.preventDefault();
+        e.stopImmediatePropagation();
         if(s[1] == undefined){
             console.log('Indefinido');
+            window.alert('Essa Empresa não existe!!');
         }
         else{
-            if(y2==0){
-                console.log(s[1]);
-                updateChart(s[1]);
-            }
-            if(y2 == 2){
-                y2 = -1;
-            }
-            console.log(y2);
-            y2 = y2+1;
+
+            console.log(s[1]);
+            updateChart(s[1]);
+
         }
         
     })
     
     b3.addEventListener('click', function(e){
-        e.preventDefault();
+        e.stopImmediatePropagation();
         if(s[2] == undefined){
             console.log('Indefinido');
+            window.alert('Essa Empresa não existe!!');
         }
         else{
-            if(y3==0){
-                console.log(s[2]);
-                updateChart(s[2]);
-            }
-            if(y3 == 2){
-                y3 = -1;
-            }
-            console.log(y3);
-            y3 = y3+1;
+
+            console.log(s[2]);
+            updateChart(s[2]);
+            
         }
         
     })
     b4.addEventListener('click', function(e){
-        e.preventDefault();
+        e.stopImmediatePropagation();
         if(s[3] == undefined){
             console.log('Indefinido');
+            window.alert('Essa Empresa não existe!!');
         }
         else{
-            if(y4==0){
-                console.log(s[3]);
-                updateChart(s[3]);
-            }
-            if(y4 == 2){
-                y4 = -1;
-            }
-            console.log(y4);
-            y4 = y4+1;
+           
+            console.log(s[3]);
+            updateChart(s[3]);
+            
         }
         
     })
     b5.addEventListener('click', function(e){
-        e.preventDefault();
+        e.stopImmediatePropagation();
 
         if(s[4] == undefined){
             console.log('Indefinido');
+            window.alert('Essa Empresa não existe!!');
         }
         else{
-            if(y5==0){
-                console.log(s[4]);
-                updateChart(s[4]);
-            }
-            if(y5 == 2){
-                y5 = -1;
-            }
-            console.log(y5);
-            y5 = y5+1;
+           
+            console.log(s[4]);
+            updateChart(s[4]);
+           
         }
         
     })
