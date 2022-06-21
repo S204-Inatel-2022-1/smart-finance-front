@@ -64,6 +64,18 @@ cadastrar.addEventListener('click', (event) => {
 //login
 entrar.addEventListener('click', (event) => {
     event.preventDefault()
+    
+    if(localStorage.getItem('loggedIn') != "true"){
+        const aguarde = document.querySelector('#aguarde')
+        aguarde.innerHTML = `
+        <div class="loader">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+        </div>
+        `
+    }
 
     xhr.onreadystatechange = function () {
         if (this.readyState != 4) return;
@@ -84,6 +96,8 @@ entrar.addEventListener('click', (event) => {
                 window.location.replace('./dashboard.html')
 
             }
+
+            aguarde.innerHTML = ''
         }
 
         if(this.status == 400){

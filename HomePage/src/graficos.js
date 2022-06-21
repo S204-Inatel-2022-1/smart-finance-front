@@ -1,6 +1,8 @@
 const label = 'EXI';
 
 async function getData(label){
+    console.log('entrou '+label)
+
     const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${label}&apikey=0ZWXW9IYMFL3DR7W`;
 
     const options = {
@@ -21,14 +23,15 @@ async function getData(label){
         let arr = Object.entries(dat["Time Series (Daily)"]);
         console.log(arr[0][0]);
         console.log(arr[0][1]["1. open"]);
+        console.log('url correta == '+ url)
         return arr;
     }catch(e){
-        pegouErro()
+        pegouErro(url)
     }
-    function pegouErro(){
+    function pegouErro(e){
         const qs = document.querySelector('#card-body')
         qs.innerHTML = `<h3 style="text-align: center;">Aguarde 1 minuto para fazer outra requisição.</h3>`
-
+        console.log('url errada == '+e)
         setTimeout(() => {
             document.location.reload(true)
         }, 60000)
@@ -180,6 +183,7 @@ function updateChart(label){
 
 
     const teste = async () => {
+        console.log(label)
         const a = await getData(label);
         console.log(a);
 
