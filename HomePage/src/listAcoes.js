@@ -13,7 +13,7 @@ xhrGet.onreadystatechange = function() {
     }
 }
 
-xhrGet.open('GET', 'http://smart-finance-back.herokuapp.com/comprar-acoes')
+xhrGet.open('GET', 'https://smart-finance-back.herokuapp.com/comprar-acoes')
 xhrGet.send()
 
 function listAcoes(acao){
