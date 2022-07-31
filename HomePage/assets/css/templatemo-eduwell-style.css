@@ -82,7 +82,7 @@ header, nav, section, article, aside, footer, hgroup {
 html, body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  background-color: #fff;
+  background-color: #000000;
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -105,11 +105,42 @@ ul {
 p {
   font-size: 18px;
   line-height: 25px;
-  color: #4a4a4a;
+  color: #FFFF;
 }
 
 img {
   width: 100%;
+  right: 80px;
+  overflow: hidden;
+}
+
+.left-image {
+  width: 60%;
+  position: absolute;
+  left: 75px;
+  /* right: 100px;
+  top: 50px; */
+}
+
+.left-imageP {
+  width: 60%;
+  position: absolute;
+  left: 75px;
+  top: 70px;
+  /* right: 100px;
+  top: 50px; */
+}
+
+.left-imageB {
+  width: 50%;
+  position: relative;
+  left: 110px;
+  bottom: 55px;
+}
+
+.logo {
+  position: relative;
+  right: 80px;
   overflow: hidden;
 }
 
@@ -120,8 +151,8 @@ global styles
 */
 html,
 body {
-  background: #fff;
-  font-family: 'Open Sans', sans-serif;
+  background: #000000;
+  font-family: 'Abel';
 }
 
 ::selection {
@@ -153,8 +184,9 @@ body {
 .main-button-gradient a {
   font-size: 13px;
   color: #fff;
-  background: rgb(0,255,0);
-  background: linear-gradient(-145deg, rgba(0,255,0,1) 0%, rgba(132,255,132,1) 100%);
+  background: #334B3D;
+  border: 3px solid #00FF47;
+  /* background: linear-gradient(-145deg, rgba(0,255,0,1) 0%, rgba(132,255,132,1) 100%); */
   padding: 12px 30px;
   display: inline-block;
   border-radius: 5px;
@@ -164,8 +196,8 @@ body {
 }
 
 .main-button-gradient a:hover {
-  background: rgb(0,255,0);
-  background: linear-gradient(-145deg, rgba(0,255,0,1) 0%, rgba(132,255,132,1) 100%);
+  background: #00FF47;
+  /* background: linear-gradient(-145deg, rgba(0,255,0,1) 0%, rgba(132,255,132,1) 100%); */
   opacity: 0.9;
 }
 
@@ -217,17 +249,23 @@ section {
 .section-heading h6 {
   font-size: 13px;
   text-transform: uppercase;
-  color: #7a7a7a;
-  font-weight: 600;
+  color: #ffffff;
+  font-weight: 200;
 }
 
 .section-heading h4 {
   margin-top: 10px;
   line-height: 40px;
-  font-size: 28px;
+  font-size: 40px;
   font-weight: 900;
   text-transform: capitalize;
-  color: #111;
+  color: #FFFFFF;
+  text-shadow:
+   -1px -1px 0 #005413,  
+    1px -1px 0 #005413,
+    -1px 1px 0 #005413,
+     1px 1px 0 #005413;
+  /* border: 2px solid #00FF38; */
 }
 
 .section-heading h4 em {
@@ -246,9 +284,10 @@ header
 --------------------------------------------- 
 */
 .background-header {
-  background: rgb(0,255,0) !important;
-  background: linear-gradient(-145deg, rgba(0,255,0,1) 0%, rgba(132,255,132,1) 100%) !important;
-  height: 80px!important;
+  background: rgb(0, 0, 0) !important;
+  background: linear-gradient(-145deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%) !important;
+  border-bottom: 3px solid #187900;
+  height: 90px!important;
   position: fixed!important;
   top: 0!important;
   left: 0;
@@ -257,7 +296,7 @@ header
 }
 
 .header-area {
-  background-image: url(../images/header-bgV.png);
+  background-image: url(../images/header-bgP.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -325,7 +364,7 @@ header
 .header-area .main-nav .nav li a {
   display: block;
   font-weight: 420;
-  font-size: 17px;
+  font-size: 20px;
   text-transform: capitalize;
   color: #fff;
   -webkit-transition: all 0.3s ease 0s;
@@ -691,7 +730,7 @@ section.main-banner {
 
 .main-banner .right-image::after {
   position: absolute;
-  background-image: url(../images/banner-right-decV.png);
+  /* background-image: url(../images/banner-right-decV.png); */
   width: 378px;
   height: 378px;
   content: '';
@@ -701,7 +740,7 @@ section.main-banner {
 
 .main-banner .header-text::after {
   position: absolute;
-  background-image: url(../images/banner-left-decV.png);
+  /* background-image: url(../images/banner-left-decV.png); */
   width: 214px;
   height: 429px;
   content: '';
@@ -715,8 +754,9 @@ section.main-banner {
   z-index: 2;
   font-size: 17px;
   font-weight: 500;
+  top: 16px;
   text-transform: capitalize;
-  color: #777777;;
+  color: #FFFF;;
 }
 
 .main-banner .header-text h2 {
@@ -724,7 +764,7 @@ section.main-banner {
   z-index: 2;
   margin-top: 20px;
   font-size: 64px;
-  color: #111111;
+  color: #FFFF;
   font-weight: 900;
   line-height: 74px;
   margin-bottom: 40px;
@@ -746,13 +786,30 @@ section.main-banner {
 services
 ---------------------------------------------
 */ 
+.owl-item.active {
+  width: 267.75px;
+  margin-right: 15px;
+}
+
+.owl-item.cloned {
+  width: 267.75px;
+  margin-right: 15px;
+}
+
+.owl-item {
+  width: 267.75px;
+  margin-right: 15px;
+}
 
 .services .item {
-  border-radius: 15px;
+  border-radius: 5px;
   text-align: center;
   padding: 50px 30px;
   margin: 15px;
   transition: all .3s;
+  border: 2px solid #00df66;
+  height: 363px;
+  /* width: 237.75px; */
 }
 
 .services .item:hover {
@@ -761,7 +818,7 @@ services
 
 .services .item .icon {
   max-width: 75px;
-  margin: 0 auto;
+  margin: 0 auto; 
   min-height: 80px;
   line-height: 80px;
   vertical-align: middle;
@@ -772,6 +829,12 @@ services
   margin-bottom: 15px;
   font-size: 20px;
   font-weight: 800;
+  color: #FFFFFF;
+  text-shadow:
+   -1px -1px 0 #005413,  
+    1px -1px 0 #005413,
+    -1px 1px 0 #005413,
+     1px 1px 0 #005413;
 }
 
 .services .owl-dots {
@@ -788,7 +851,7 @@ services
 }
 
 .services .owl-dots .active {
-  background-color: #33ff00;
+  background-color: #00df66;
 }
 
 
@@ -809,7 +872,7 @@ section.our-courses .section-heading p {
 section.our-courses:before {
   position: absolute;
   content: '';
-  background-image: url(../images/our-courses-left-dec.png);
+  /* background-image: url(../images/our-courses-left-dec.png); */
   left: 45px;
   top: -140px;
   width: 291px;
@@ -820,7 +883,7 @@ section.our-courses:before {
 section.our-courses:after {
   position: absolute;
   content: '';
-  background-image: url(../images/our-courses-right-dec.png);
+  /* background-image: url(../images/our-courses-right-dec.png); */
   right: 45px;
   top: -140px;
   width: 291px;
@@ -833,13 +896,13 @@ section.our-courses .naccs {
 }
 
 section.our-courses .naccs .menu div {
-  padding: 15px 30px;
+  padding: 4px 30px;
   text-align: center;
   border-radius: 5px !important;
   margin-bottom: 40px;
-  font-size: 20px;
-  color: #111;
-  background-color: #fff;
+  font-size: 32px;
+  color: #FFFF;
+  /* background-color: #fff; */
   cursor: pointer;
   vertical-align: middle;
   font-weight: 900;
@@ -848,8 +911,8 @@ section.our-courses .naccs .menu div {
 }
 
 section.our-courses .naccs .menu div.active {
-  color: #1eff00;
-  border: 3px solid rgba(0,255,0,1);
+  color: #00ff75;
+  border: 3px solid #00ff75;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
 }
 
@@ -864,16 +927,18 @@ section.our-courses ul.nacc {
 }
 
 section.our-courses ul.nacc li {
-  background-color: #fff;
+  border: 3px solid #00ff75;
+  background-color: rgb(0, 0, 0);
   overflow: hidden;
   opacity: 0;
   transform: translateX(50px);
   position: absolute;
   list-style: none;
   transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
-  border-radius: 15px;
+  border-radius: 5px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
   padding-right: 50px;
+  width: 110%;
 }
 
 section.our-courses ul.nacc li .left-image {
@@ -886,6 +951,9 @@ section.our-courses ul.nacc li .left-image {
 section.our-courses ul.nacc li .left-image img {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+  position: relative;
+  right: 6%;
+  width: 50%;
 }
 
 section.our-courses ul.nacc li .left-image .price h6 {
@@ -911,9 +979,14 @@ section.our-courses ul.nacc li .right-content {
 }
 
 section.our-courses ul.nacc li .right-content h4 {
-  font-size: 20px;
-  color: #111;
-  margin-bottom: 25px;
+  font-size: 40px;
+  color: #FFFFFF;
+  text-shadow:
+   -1px -1px 0 #00b027,  
+    1px -1px 0 #00b027,
+    -1px 1px 0 #00b027,
+     1px 1px 0 #00b027;
+  margin-bottom: 15px;
   font-weight: 800;
 }
 
@@ -937,7 +1010,8 @@ section.our-courses ul.nacc li .right-content .last-span {
 }
 
 section.our-courses ul.nacc li .right-content p {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  width: 110%;
 }
 
 section.our-courses ul.nacc li .right-content .text-button {
@@ -964,12 +1038,12 @@ cta
 */
 
 section.simple-cta {
-  background-image: url(../images/cta-bgV.png);
+  /* background-image: url(../images/cta-bgV.png); */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   width: 100%;
-  padding: 180px 0px 180px 0px;
+  /* padding: 180px 0px 180px 0px; */
 }
 
 section.simple-cta .left-image {
@@ -982,10 +1056,12 @@ section.simple-cta h6 {
 }
 
 section.simple-cta h4 {
-  font-size: 62px;
-  font-weight: 900;
+  font-size: 64px;
+  font-weight: 300;
   color: #fff;
   line-height: 74px;
+  width: 580px;
+  text-align: center;
   margin-top: 20px;
 }
 
@@ -993,6 +1069,8 @@ section.simple-cta p {
   color: #fff;
   margin-top: 30px;
   margin-bottom: 40px;
+  width: 580px;
+  font-size: 20px;
 }
 
 
@@ -1009,7 +1087,7 @@ section.testimonials {
 section.testimonials:before {
   position: absolute;
   content: '';
-  background-image: url(../images/testimonials-left-decV.png);
+  background-image: url(../images/testimonials-left-decV2.png);
   left: 0px;
   top: -140px;
   width: 593px;
@@ -1020,7 +1098,7 @@ section.testimonials:before {
 section.testimonials:after {
   position: absolute;
   content: '';
-  background-image: url(../images/testimonials-right-decV.png);
+  background-image: url(../images/testimonials-right-decV2.png);
   right: 0px;
   bottom: -140px;
   width: 632px;
@@ -1029,13 +1107,23 @@ section.testimonials:after {
 }
 
 .testimonials .item {
-  border-radius: 15px;
+  border-radius: 5px;
+  border: 3px solid #00FF47;
   padding: 30px;
-  background-color: #fff;
+  background-color: #0000;
   margin: 15px;
   transition: all .3s;
   position: relative;
   z-index: 2;
+  width: 332px;
+  height: 600px;
+  color: #FFFFFF;
+  text-shadow:
+   -1px -1px 0 #005413,  
+    1px -1px 0 #005413,
+    -1px 1px 0 #005413,
+     1px 1px 0 #005413;
+  text-align: center;   
 }
 
 .testimonials .item:hover {
@@ -1094,23 +1182,23 @@ contact us
 */
 
 section.contact-us {
-  background-image: url(../images/footer-bgV.png);
+  /* background-image: url(../images/footer-bgV.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 0px;
-  position: relative;
+  position: relative; */
 }
 
 section.contact-us:after {
-  position: absolute;
+  /* position: absolute;
   content: '';
   background-image: url(../images/footer-left-decV.png);
   left: 0px;
   top: 60px;
   width: 267px;
   height: 396px;
-  z-index: 1;
+  z-index: 1; */
 }
 
 section.contact-us .contact-info {
@@ -1721,9 +1809,9 @@ section.more-info .count-area-content .count-title {
 
 
 /* 
----------------------------------------------
+--------------------------------------------- ----------------------------------------------------------------------------------------------------------
 responsive
---------------------------------------------- 
+--------------------------------------------- --------------------------------------------------------------------------------------------------------
 */
 
 
@@ -1754,8 +1842,7 @@ body {
     font-size: 62px;
   }
   .header-area {
-    background: rgb(0,255,0) !important;
-    background: linear-gradient(-145deg, rgba(0,255,0,1) 0%, rgba(132,255,132,1) 100%) !important;
+    background-image: url(../images/header-bgP.png);
   }
   .services .owl-nav .owl-next{
     right: -70px;

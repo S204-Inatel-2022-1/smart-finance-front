@@ -261,7 +261,7 @@
 
 .mainheader-area {
     background: #fff;
-    border-bottom: 1px solid #f3f8fb;
+    border-bottom: 1px solid #000000;
     padding-left: 15px;
     position: relative;
     z-index: 99;
@@ -290,7 +290,7 @@
 
 .horizontal-menu ul li:hover>a,
 .horizontal-menu ul li.active>a {
-    color: #007BFF;
+    color: #fff;
 }
 
 .horizontal-menu nav>ul>li:first-child>a {
@@ -340,7 +340,7 @@
 
 .header-bottom .search-box input {
     max-width: 350px;
-    width: 100%;
+    width: 303px;
 }
 
 /* mobile menu */
@@ -399,7 +399,7 @@
 .header-area {
     padding: 7px 20px;
     background: rgba(0,255,0,1);
-    border-bottom: 1px solid #d8e3e7;
+    border-bottom: 2px solid #000000;
 }
 
 .nav-btn {
@@ -719,7 +719,7 @@ ul.breadcrumbs {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     background: -webkit-linear-gradient(left, #8914fe 0%, #8063f5 100%);
-    background: linear-gradient(to right, rgb(132, 255, 132) 0%, rgb(132, 255, 0) 100%);
+    background: linear-gradient(to right, rgb(0, 255, 0) 0%, rgb(32, 255, 32) 100%);
     padding: 17px 38px;
     position: relative;
 }

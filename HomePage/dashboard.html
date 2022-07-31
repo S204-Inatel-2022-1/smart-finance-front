@@ -61,10 +61,73 @@
         #btnP:active {
         transform: translateY(-1px);
         }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid rgb(42,42,42);
+            padding: 8px;
+            align-items : center;
+            text-align: center;
+        }
+
+        th {
+            color: #000;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        tr:nth-child(even){
+            background-color: #228C22;
+        }
+
+        td:hover {
+            background-color: rgb(117, 235, 117);
+            color: rgb(180, 180, 180);
+            border: none;
+            border-radius: 45px;
+            box-shadow: 0px 10px 17px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            outline: none;
+            transform: translateY(-5px);
+        }
+
+         body{
+            background-color: rgb(33,33,33);
+
+        }
+        
+        #card-body{
+            background-color: rgb(33,33,33);
+
+        }
+        .card-body{
+            background-color: rgb(33,33,33);
+        }
+
+        .canvasjs-chart-canvas{
+            background-color: #00000038;
+
+        }
+
+        table.dbkit-table tr{
+            background-color: rgb(42,42,42);
+        }
+
+        .mainheader-area{
+            background-color: rgb(42,42,42);
+        }
+
     </style>
 </head>
 
 <body>
+    
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -73,47 +136,66 @@
         <div class="loader"></div>
     </div>
     <!-- preloader area end -->
-    <!-- page container area start -->
-    <div class="page-container">
-        <!-- sidebar menu area start -->
-        <div class="sidebar-menu">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <a href=""><img src="assets/images/icon/logo3.png" alt="logo"></a>
-                </div>
-            </div>
-            <div class="main-menu">
-                <div class="menu-inner">
-                    <nav>
-                        <ul class="metismenu" id="menu">
-                            <li><a href="index.html"><i class="ti-layers-alt"></i> <span>Langing Page</span></a></li>
-                            <li><a href="dashboard.html"><i class="ti-dashboard"></i> <span>Dashboard</span></a></li>
-                            <li><a href="consultoria.html"><i class="ti-pie-chart"></i> <span>Consultoria</span></a></li>
-                            
-                        </ul>
-                    </nav>
+    <!-- main wrapper start -->
+    <div class="horizontal-main-wrapper">
+        <!-- main header area start -->
+        <div class="mainheader-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/images/icon/logo3.png" alt="logo"></a>
+                        </div>
+                    </div>
+                    <!-- profile info & task notification -->
+                    <div class="col-md-9 clearfix text-right">
+                        <div class="d-md-inline-block d-block mr-md-4">
+                            <ul class="notification-area">
+                                <li id="full-view"><i class="ti-fullscreen"></i></li>
+                                <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
+                                
+                                <li class="settings-btn">
+                                    <i class="ti-settings"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clearfix d-md-inline-block d-block">
+                            <div class="user-profile m-0">
+                                <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
+                                <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><span id="nome-usuario"></span><i class="fa fa-angle-down"></i></h4>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" onclick="logOut()" href="login.html">Log Out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- sidebar menu area end -->
-        <!-- main content area start -->
-        <div class="main-content">
-            <!-- header area start -->
-            <div class="header-area">
+        <!-- main header area end -->
+        <!-- header area start -->
+        <div class="header-area header-bottom">
+            <div class="container">
                 <div class="row align-items-center">
-                    <!-- nav and search button -->
-                    <div class="col-md-5 col-sm-8 clearfix">
-                        <div class="nav-btn pull-left">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                    <div class="col-lg-9  d-none d-lg-block">
+                        <div class="horizontal-menu">
+                            <nav>
+                                <ul id="nav_menu" id="menu">
+                                    <li><a href="index.html"><i class="ti-layers-alt"></i> <span>Langing Page</span></a></li>
+                                    <li><a href="dashboard.html"><i class="ti-dashboard"></i> <span>Dashboard</span></a></li>
+                                    <li><a href="consultoria.html"><i class="ti-pie-chart"></i> <span>Consultoria</span></a></li>
+                                </ul>
+                            </nav>
                         </div>
+                    </div>
+                    <!-- nav and search button -->
+                    <div class="col-lg-3 clearfix">
                         <div class="search-box pull-left">
                             <form action="">
                                 <input list="historico" type="text" id="pesquisa" name="pesquisa" placeholder="Pesquisar..." required>
                                 <i ><button id="btnP" class="ti-search" onmousedown="bleep.play()"></button></i>
                                 <!-- <i class="ti-search"></i> -->
-
+        
                                 <datalist id="historico">
                                     <option value="ABEV"></option>
                                     <option value="AMER"></option>
@@ -137,63 +219,21 @@
                                 */
                             </script>
                         </div>
-                    </div>    
-                    <!-- <div class="col-sm-2">
-                        <div class="form-group">
-                            <label for="example-date-input" class="col-form-label"><strong>Data de Inicio:</strong></label>
-                            <input class="form-control" type="date" value="2022-01-01" id="example-date-input">
-                        </div>
                     </div>
-
-                    <div class="col-sm-2">
-                        <div class="form-group">
-                            <label for="example-date-input" class="col-form-label"><strong>Data de Fim:</strong></label>
-                            <label for="example-date-input" class="col-form-label"></label>
-                            <input class="form-control" type="date" value="2022-03-05" id="example-date-input">
-                        </div>
-                    </div>
-                         -->
-                    
-                    <!-- profile info & task notification -->
-                    <div class="col-md col-sm-4 clearfix">
-                        <ul class="notification-area pull-right">
-                            <li id="full-view"><i class="ti-fullscreen"></i></li>
-                            <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
-
-                        </ul>
+                    <!-- mobile_menu -->
+                    <div class="col-12 d-block d-lg-none">
+                        <div id="mobile_menu"></div>
                     </div>
                 </div>
             </div>
-            <!-- header area end -->
-            <!-- page title area start -->
-            <div class="page-title-area">
-                <div class="row align-items-center">
-                    <div class="col-sm-6">
-                        <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Dashboard</h4>
-                            <ul class="breadcrumbs pull-left">
-                                <li><a href="/">Home</a></li>
-                                <li><span>Dashboard</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 clearfix">
-                        <div class="user-profile pull-right">
-                            <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
-                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><span id="nome-usuario"></span><i class="fa fa-angle-down"></i></h4>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" onclick="logOut()" href="login.html">Log Out</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
+
             <div class="main-content-inner">
                     <div class="row"> 
                     <!-- overview area end -->
                     <!-- market value area start -->
                     <div class="row col-12 mt-3 mb-3">
-                        <div class="col-12">
+                        <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-sm-flex justify-content-between align-items-center">
@@ -202,75 +242,19 @@
                                     <div class="market-status-table mt-4">
                                         <div class="table-responsive">
                                             <table class="dbkit-table">
-                                                <tr class="heading-td">
-                                                    
-                                                    <td class="coin-name"><strong>Empresas</strong></td>
-                                                    <td class="name"><strong>Nomes</strong></td>
-                                                    <td class="buy"><strong>Câmbio</strong></td>
-                                                    <td class="sell"><strong>Data</strong></td>
-                                                    <td class="attachments"><strong>Status</strong></td>
-                                                    <td class="trends"><strong>Selecionar</strong></td>
-                                                </tr>
-                                                <tr>
-                
-                                                    <td class="coin-name" id="nome1">--</td>
-                                                    <td class="name" >--<span id="emp1" style="font-size: 11px; text-align:center;"></span></td>
-                                                    <td class="buy" id="low1">--</td>
-                                                    <td class="sell" id="high1">--</td>
-                                                    <td class="attachments" ><img id="close1" src="assets/images/icon/market-value/inativo2.png" alt="icon"></td>
-                                                    <td class="trends" ><button type="button" id="botao1" class="btn btn-outline-success mb-3" onmousedown="bleep.play()">Definir</button></td>
-                                                    <!-- <td class="stats-chart">
-                                                        <canvas id="mvaluechart"></canvas>
-                                                    </td> -->
-                                                </tr>
-                                                <tr>
-                                                    
-                                                    <td class="coin-name" id="nome2">--</td>
-                                                    <td class="name">--<span id="emp2" style="font-size: 11px; text-align:center;"></span></td>
-                                                    <td class="buy" id="low2">--</td>
-                                                    <td class="sell" id="high2">--</td>
-                                                    <td class="attachments" ><img id="close2" src="assets/images/icon/market-value/inativo2.png" alt="icon"></td>
-                                                    <td class="trends" ><button type="button" id="botao2" class="btn btn-outline-success mb-3" onmousedown="bleep.play()">Definir</button></td>
-                                                    <!-- <td class="stats-chart">
-                                                        <canvas id="mvaluechart2"></canvas>
-                                                    </td> -->
-                                                </tr>
-                                                <tr>
-                                                    
-                                                    <td class="coin-name" id="nome3">--</td>
-                                                    <td class="name">--<span id="emp3" style="font-size: 11px; text-align:center;"></span></td>
-                                                    <td class="buy" id="low3">--</td>
-                                                    <td class="sell" id="high3">--</td>
-                                                    <td class="attachments" ><img id="close3" src="assets/images/icon/market-value/inativo2.png" alt="icon"></td>
-                                                    <td class="trends" ><button type="button" id="botao3" class="btn btn-outline-success mb-3" onmousedown="bleep.play()">Definir</button></td>
-                                                    <!-- <td class="stats-chart">
-                                                        <canvas id="mvaluechart3"></canvas>
-                                                    </td> -->
-                                                </tr>
-                                                <tr>
-                                                    
-                                                    <td class="coin-name" id="nome4">--</td>
-                                                    <td class="name">--<span id="emp4" style="font-size: 11px; text-align:center;"></span></td>
-                                                    <td class="buy" id="low4">--</td>
-                                                    <td class="sell" id="high4">--</td>
-                                                    <td class="attachments" ><img id="close4" src="assets/images/icon/market-value/inativo2.png" alt="icon"></td>
-                                                    <td class="trends" ><button type="button" id="botao4" class="btn btn-outline-success mb-3" onmousedown="bleep.play()">Definir</button></td>
-                                                    <!-- <td class="stats-chart">
-                                                        <canvas id="mvaluechart4"></canvas>
-                                                    </td> -->
-                                                </tr>
-                                                <tr>
-                                                    
-                                                    <td class="coin-name" id="nome5">--</td>
-                                                    <td class="name">--<span id="emp5" style="font-size: 11px; text-align:center;"></span></td>
-                                                    <td class="buy" id="low5">--</td>
-                                                    <td class="sell" id="high5">--</td>
-                                                    <td class="attachments" ><img id="close5" src="assets/images/icon/market-value/inativo2.png" alt="icon"></td>
-                                                    <td class="trends" ><button type="button" id="botao5" class="btn btn-outline-success mb-3" onmousedown="bleep.play()">Definir</button></td>
-                                                    <!-- <td class="stats-chart">
-                                                        <canvas id="mvaluechart4"></canvas>
-                                                    </td> -->
-                                                </tr>
+                                                <thead>
+                                                    <tr class="heading-td">
+                                                        <th>Empresas</th>
+                                                        <th onclick="sortColumn('age')">Nomes</th>
+                                                        <th>Câmbio</th>
+                                                        <th>Data</th>
+                                                        <th>Status</th>
+                                                        <th>Selecionar</th>
+                                                    </tr>
+                                                </thead>
+                                        
+                                                <tbody id="tableData"></tbody>
+                                        
                                             </table>
                                         </div>
                                     </div>
@@ -278,7 +262,7 @@
                             </div>
                         </div>
                     </div>
-                    <script type="module" src="index2.js"></script>
+                    <script type="module" src="index3.js"></script>
                         
                     <!-- Social Campain area end -->
                     <!-- Statistics area start -->
@@ -361,7 +345,8 @@
                     </div>
                 </div>
             </div> -->
-            </div> 
+        </div>
+        </div>
         <!-- main content area end -->
         <!-- footer area start-->
         <footer>
@@ -549,6 +534,7 @@
             </div>
         </div>
     </div>
+
     <!-- offset area end -->
     <!-- jquery latest version -->
     <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>

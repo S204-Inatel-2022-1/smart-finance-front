@@ -13,7 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
@@ -40,14 +40,14 @@ https://templatemo.com/tm-573-eduwell
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
                       <a href="index.html" class="logo">
-                          <img src="assets/images/templatemoV2.png" alt="EduWell Template">
+                          <img id="logoP" src="assets/images/templatemoB2.png" alt="EduWell Template">
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
-                        <li><a href="login.html">Login/Cadastro</a></li>
                         <li><a href="dashboard.html">Dashboard</a></li>
                         <li><a href="consultoria.html">Consultoria</a></li>
+                        <li><a href="login.html">Login/Cadastro</a></li>
                           <!-- <li class="scroll-to-section"><a href="#testimonials"><strong>Dúvidas</strong></a></li>
                           <li class="scroll-to-section"><a href="#contact-section"><strong>Contate-nos</strong></a></li>
                           <li class="has-sub">
@@ -72,21 +72,48 @@ https://templatemo.com/tm-573-eduwell
 
   <!-- ***** Main Banner Area Start ***** -->
   <section class="main-banner" id="top">
+    <div id="anim_globe"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/vendor/three.r119.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.globe.min.js"></script>
+
+    <script>
+        VANTA.GLOBE({
+      //Add the id of your tag with the # before
+        el: "#anim_globe",
+      //All the controles for the user
+        mouseControls: true,
+        touchControls: false,
+        gyroControls: true,
+      //Control the min-size of the animation
+        minHeight: 500.00,
+        minWidth: 500.00,
+      //Modify the sizing
+        scale: 1.00,
+        scaleMobile: 1.00,
+        size:0.90,
+      //Customise the colors
+        color: 0x40db33,
+        color2: 0x4f17ef,
+        backgroundColor: 0x000000
+      })
+   </script>
     <div class="container">
       <div class="row">
+       
         <div class="col-lg-6 align-self-center">
           <div class="header-text">
             <h6>Bem Vindo Investidor!</h6>
-            <h2>Melhor lugar para montar sua carteira de <em>ações!</em></h2>
+            <h2>Smart Finance, o melhor lugar para escolher suas ações!</h2>
             <div class="main-button-gradient">
-              <div class="scroll-to-section"><a href="#contact-section">Começar Agora!</a></div>
+              <div class="scroll-to-section"><a href="dashboard.html">Começar Agora!</a></div>
             </div>
           </div>
         </div>
         <div class="col-lg-6">
-          <div class="right-image">
+          <!-- <div class="right-image">
             <img src="assets/images/banner-right-imageV2.png" alt="">
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -98,16 +125,16 @@ https://templatemo.com/tm-573-eduwell
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
-            <h6>Nossos Serviços</h6>
-            <h4>Serviços <em>Fornecidos</em></h4>
+            <!-- <h6>Nossos Serviços</h6> -->
+            <h4>Serviços Fornecidos</h4>
           </div>
         </div>
         <div class="col-lg-12">
-          <div class="owl-service-item owl-carousel">
+          <div class="owl-testimonials owl-carousel mx-auto">
             <div class="item">
               <div class="service-item">
                 <div class="icon">
-                  <img src="assets/images/Service-folder.png" alt="">
+                  <img src="assets/images/Consulta.png" alt="">
                 </div>
                 <h4>Consulta</h4>
                 <p>Ações da B3 estão disponíveis para consulta trimestralmente.</p>
@@ -116,7 +143,79 @@ https://templatemo.com/tm-573-eduwell
             <div class="item">
               <div class="service-item">
                 <div class="icon">
-                  <img src="assets/images/Service-coins.png" alt="">
+                  <img src="assets/images/investir.png" alt="">
+                </div>
+                <h4>Investir</h4>
+                <p>Possibilita, através da análise fundamentalista das ações, ter uma previsão de investimento.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/graficos.png" alt="">
+                </div>
+                <h4>Gráficos</h4>
+                <p>Dashboard disponível para análise precisa dos dados.</p>
+              </div>
+            </div>
+            <!-- <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/Service-chart.png" alt="">
+                </div>
+                <h4>Adaptável ao cliente</h4>
+                <p>Cliente pode salvar suas ações para consultas posteriores</p>
+              </div>
+            </div> -->
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/Consulta.png" alt="">
+                </div>
+                <h4>Consulta</h4>
+                <p>Ações da B3 estão disponíveis para consulta trimestralmente.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/investir.png" alt="">
+                </div>
+                <h4>Investir</h4>
+                <p>Possibilita, através da análise fundamentalista das ações, ter uma previsão de investimento.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/graficos.png" alt="">
+                </div>
+                <h4>Gráficos</h4>
+                <p>Dashboard disponível para análise precisa dos dados.</p>
+              </div>
+            </div>
+            <!-- <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/Service-chart.png" alt="">
+                </div>
+                <h4>Adaptável ao cliente</h4>
+                <p>Cliente pode salvar suas ações para consultas posteriores</p>
+              </div>
+            </div> -->
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/consultaP.png" alt="">
+                </div>
+                <h4>Consulta</h4>
+                <p>Ações da B3 estão disponíveis para consulta trimestralmente.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/investirP.png" alt="">
                 </div>
                 <h4>Investir</h4>
                 <p>Possibilita, através da análise fundamentalista das ações, ter uma previsão de investimento.</p>
@@ -131,7 +230,7 @@ https://templatemo.com/tm-573-eduwell
                 <p>Dashboard disponível para análise precisa dos dados.</p>
               </div>
             </div>
-            <div class="item">
+            <!-- <div class="item">
               <div class="service-item">
                 <div class="icon">
                   <img src="assets/images/Service-chart.png" alt="">
@@ -139,79 +238,7 @@ https://templatemo.com/tm-573-eduwell
                 <h4>Adaptável ao cliente</h4>
                 <p>Cliente pode salvar suas ações para consultas posteriores</p>
               </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/Service-folder.png" alt="">
-                </div>
-                <h4>Consulta</h4>
-                <p>Ações da B3 estão disponíveis para consulta trimestralmente.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/Service-coins.png" alt="">
-                </div>
-                <h4>Investir</h4>
-                <p>Possibilita, através da análise fundamentalista das ações, ter uma previsão de investimento.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/Service-analytics.png" alt="">
-                </div>
-                <h4>Gráficos</h4>
-                <p>Dashboard disponível para análise precisa dos dados.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/Service-chart.png" alt="">
-                </div>
-                <h4>Adaptável ao cliente</h4>
-                <p>Cliente pode salvar suas ações para consultas posteriores</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/Service-folder.png" alt="">
-                </div>
-                <h4>Consulta</h4>
-                <p>Ações da B3 estão disponíveis para consulta trimestralmente.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/Service-coins.png" alt="">
-                </div>
-                <h4>Investir</h4>
-                <p>Possibilita, através da análise fundamentalista das ações, ter uma previsão de investimento.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/Service-analytics.png" alt="">
-                </div>
-                <h4>Gráficos</h4>
-                <p>Dashboard disponível para análise precisa dos dados.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/Service-chart.png" alt="">
-                </div>
-                <h4>Adaptável ao cliente</h4>
-                <p>Cliente pode salvar suas ações para consultas posteriores</p>
-              </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -224,7 +251,7 @@ https://templatemo.com/tm-573-eduwell
         <div class="col-lg-6 offset-lg-3">
           <div class="section-heading">
             <h6>NOSSOS VALORES</h6>
-            <h4>Comprometimentos seguidos pela <em>Ferramenta</em></h4>
+            <h4>Comprometimentos seguidos pela Ferramenta</h4>
             <p>Com a finalidade de ter comprometimento com o cliente e garantir seu apoio.</p>
           </div>
         </div>
@@ -245,7 +272,7 @@ https://templatemo.com/tm-573-eduwell
                     <li class="active">
                       <div>
                         <div class="left-image">
-                          <img src="assets/images/courses-01.jpg" alt="">
+                          <img src="assets/images/eficienciaP.png" alt="">
                         </div>
                         <div class="right-content">
                           <h4>Eficiência</h4>
@@ -257,7 +284,7 @@ https://templatemo.com/tm-573-eduwell
                     <li>
                       <div>
                         <div class="left-image">
-                          <img src="assets/images/courses-02.jpg" alt="">
+                          <img src="assets/images/seguroP.png" alt="">
                         </div>
                         <div class="right-content">
                           <h4>Seguro</h4>
@@ -269,7 +296,7 @@ https://templatemo.com/tm-573-eduwell
                     <li>
                       <div>
                         <div class="left-image">
-                          <img src="assets/images/courses-03.jpg" alt="">
+                          <img src="assets/images/amigavelP.png" alt="">
                         </div>
                         <div class="right-content">
                           <h4>Amigável</h4>
@@ -281,7 +308,7 @@ https://templatemo.com/tm-573-eduwell
                     <li>
                       <div>
                         <div class="left-image">
-                          <img src="assets/images/courses-04.jpg" alt="">
+                          <img src="assets/images/precisoP.png" alt="">
                         </div>
                         <div class="right-content">
                           <h4>Preciso</h4>
@@ -305,11 +332,12 @@ https://templatemo.com/tm-573-eduwell
       <div class="row">
         <div class="col-lg-5 offset-lg-1">
           <div class="left-image">
-            <img src="assets/images/cta-left-imageV.png" alt="">
+            <img class="left-imageB" src="assets/images/banner-right-imageBB.png" alt="">
+            <img class="left-imageP" src="assets/images/cta-left-imageP.gif" alt="">
           </div>
         </div>
         <div class="col-lg-5 align-self-center">
-          <h4>O QUE É A BOLSA DE VALORES</h4>
+          <h4>O QUE É A BOLSA DE VALORES?</h4>
           <p>A Bolsa de Valores é um grande mercado onde acontecem as negociações de ações, títulos e outros ativos. Por isso, ela é o ponto de encontro entre as empresas e os investidores que desejam comprar ou vender suas ações.
             <br></br>O papel da Bolsa de Valores é garantir que tudo isso aconteça com segurança, eficiência e de uma forma justa: as empresas conseguem captar recursos para continuar crescendo, enquanto pequenos e grandes investidores podem se tornar sócios de grandes empresas e participar desse crescimento.</p>
           
@@ -324,7 +352,7 @@ https://templatemo.com/tm-573-eduwell
         <div class="col-lg-12">
           <div class="section-heading">
             <h6>Mercado</h6>
-            <h4>Dúvidas <em>Frequentes</em></h4>
+            <h4>Dúvidas Frequentes</h4>
           </div>
         </div>
         <div class="col-lg-12">
@@ -373,66 +401,7 @@ https://templatemo.com/tm-573-eduwell
   <section class="contact-us" id="contact-section">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8">
-          <div id="map">
-          
-            <!-- You just need to go to Google Maps for your own map point, and copy the embed code from Share -> Embed a map section -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.5560855024623!2d-45.69938628557714!3d-22.25691562059831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cba2fdceb70c69%3A0xbbedf16822a092a9!2sInstituto%20Nacional%20de%20Telecomunica%C3%A7%C3%B5es%20-%20Inatel!5e0!3m2!1spt-BR!2sbr!4v1647521823554!5m2!1spt-BR!2sbr" width="100%" height="420px" frameborder="0" style="border:0; border-radius: 15px; position: relative; z-index: 2;" allowfullscreen=""></iframe>
-            <div class="row">
-              <div class="col-lg-4 offset-lg-1">
-                <div class="contact-info">
-                  <div class="icon">
-                    <i class="fa fa-phone"></i>
-                  </div>
-                  <h4>Telefone</h4>
-                  <span>(35) 3471-9200</span>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="contact-info">
-                  <div class="icon">
-                    <i class="fa fa-phone"></i>
-                  </div>
-                  <h4>Contato</h4>
-                  <span>inatel@inatel.br</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <form id="contact" action="" method="post">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="section-heading">
-                  <h6>Contate-nos</h6>
-                  <h4>Nos <em>Escreva</em></h4>
-                  <p>Caso tenha dúvidas ou queira perguntar algo, basta nos escrever.</p>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <input type="name" name="name" id="name" placeholder="Nome Completo" autocomplete="on" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Seu E-mail" required="">
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <textarea name="message" id="message" placeholder="Sua Mensagem"></textarea>
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <button type="submit" id="form-submit" class="main-gradient-button">Enviar Mensagem</button>
-                </fieldset>
-              </div>
-            </div>
-          </form>
-        </div>
+        
         <div class="col-lg-12">
           <p class="copyright">Copyright © 2022. 
           
