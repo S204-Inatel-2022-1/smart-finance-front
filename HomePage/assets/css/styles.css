@@ -82,6 +82,7 @@
 .card-body {
     padding: 25.6px;
     padding: 1.6rem;
+    /* width: 110%; */
 }
 
 .h-full {
@@ -111,7 +112,7 @@
     width: 280px;
     overflow: hidden;
     
-    background-image: url(../images/cta-bgV3.png);
+    background-image: url(../images/cta-bgV2.png);
     box-shadow: 2px 0 32px rgba(0, 0, 0, 0.3);
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -140,9 +141,10 @@
 }
 
 .sidebar-header {
-    padding: 19px 32px 20px;
-    background: rgba(137, 255, 137, 1);
-    border-bottom: 1px solid #343e50;
+    padding: 12px 30px 12px;
+    background: #000;
+    border-bottom: 1px solid #00FF75;
+    border-right: 3px solid #00FF75;
 }
 .sidebar-menu .logo{
     text-align: left;
@@ -158,8 +160,13 @@
 .metismenu li a {
     position: relative;
     display: block;
-    color: rgba(255, 255, 255,1);
-    font-size: 18px;
+    color: #FFFFFF;
+    text-shadow:
+    -1px -1px 0 #005413,  
+        1px -1px 0 #005413,
+        -1px 1px 0 #005413,
+        1px 1px 0 #005413;
+    font-size: 24px;
     text-transform: capitalize;
     padding: 15px 15px;
     letter-spacing: 0;
@@ -210,7 +217,8 @@
 .metismenu >li:hover>a,
 .metismenu >li.active>a {
     color: #fff;
-    background: rgba(0, 255, 0, 1);
+    background: #000;
+    border: 1px solid #00FF75;
 }
 
 .metismenu li:hover>a,
@@ -397,9 +405,17 @@
 /*-------------------- 2.2 Header Area -------------------*/
 
 .header-area {
-    padding: 7px 20px;
-    background: rgba(0,255,0,1);
-    border-bottom: 2px solid #000000;
+    padding: 1px 20px;
+    background: rgb(0, 0, 0);
+    border-bottom: 1px solid #00FF75;
+    /* border-bottom: 2px solid #000000; */
+}
+
+.btn-outline-success {
+    border-radius: 100%;
+    padding: 12px 12px;
+    font-size: 13px;
+    letter-spacing: 0;
 }
 
 .nav-btn {
@@ -446,11 +462,14 @@
     width: 350px;
     border-radius: 33px;
     border: none;
-    height: 40px;
+    height: 52px;
     padding-left: 20px;
     padding-right: 40px;
     letter-spacing: 0;
-    background: #f3eeff;
+    background: #000000;
+    border: 2px solid #00FF75;
+    color: #fff;
+    font-size: 18px;
 }
 
 .search-box input::-webkit-input-placeholder {
@@ -651,7 +670,14 @@
 
 .page-title-area {
     padding: 0 30px;
-    background: #fff;
+    background: #000;
+    position: relative;
+    border-bottom: 1px solid #00FF75;
+}
+
+.page-title-areaD {
+    padding: 0 30px;
+    background: #000;
     position: relative;
 }
 
@@ -659,10 +685,10 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 57%;
     width: 4px;
     height: 36px;
-    background: rgb(132, 255, 0);
+    background: #00FF75;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
 }
@@ -719,20 +745,54 @@ ul.breadcrumbs {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     background: -webkit-linear-gradient(left, #8914fe 0%, #8063f5 100%);
-    background: linear-gradient(to right, rgb(0, 255, 0) 0%, rgb(32, 255, 32) 100%);
+    background: #000;
+    /* border: 1px solid #00FF75; */
     padding: 17px 38px;
     position: relative;
 }
 
+#lef {
+    left: 26%;
+}
+
 .user-profile img.avatar {
-    height: 35px;
-    width: 35px;
-    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    /* border-radius: 50%; */
     margin-right: 12px;
 }
 
+.setaUser {
+    height: 35px;
+    width: 35px;
+}
+
+.sairCaixa {
+    background: #000;
+    border: 1px solid #00FF75;
+    padding: 7px 60px;
+    position: relative;
+}
+
+.sair {
+    color: #fff;
+    font-family: 'Abel';
+    font-size: 18px;
+}
+
+.sair:hover {
+    font-family: 'Abel';
+    font-size: 18px;
+    color: #FFFFFF;
+    text-shadow:
+    -1px -1px 0 #005413,  
+        1px -1px 0 #005413,
+        -1px 1px 0 #005413,
+        1px 1px 0 #005413;
+}
+
 .user-name {
-    font-size: 17px;
+    font-size: 25px;
     font-weight: 500;
     color: #fff;
     letter-spacing: 0;
@@ -838,11 +898,16 @@ ul.breadcrumbs {
 }
 
 .header-title {
-    font-family: 'Lato', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
+    font-family: 'Abel';
+    font-size: 23px;
+    font-weight: 700;
     letter-spacing: 0;
-    color: #333;
+    color: #fff;
+    text-shadow:
+            -1px -1px 0 #005413,  
+                1px -1px 0 #005413,
+                -1px 1px 0 #005413,
+                1px 1px 0 #005413;
     text-transform: capitalize;
     margin-bottom: 17px;
 }
@@ -956,7 +1021,7 @@ table.dbkit-table tr td {
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0;
-    color: #616161;
+    color: #ffffff;
     min-width: 141px;
 }
 
@@ -1185,7 +1250,7 @@ table.dbkit-table tr td {
 .footer-area {
     text-align: center;
     padding: 23px 0 19px;
-    background: #fff;
+    background: #000;
 }
 
 .footer-area p {
@@ -2074,7 +2139,8 @@ table tr th {
 
 table tr th,
 table tr td {
-    border-top: 1px solid rgba(120, 130, 140, 0.13) !important;
+    /* border-top: 1px solid rgba(120, 130, 140, 0.13) !important; */
+    /* font-size: larger; */
 }
 
 table tr td [class^="ti-"] {

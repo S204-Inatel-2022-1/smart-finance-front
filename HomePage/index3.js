@@ -74,10 +74,13 @@ const render = (word = "") => {
 search.addEventListener("input", e => {
     // console.log(search.value);
     e.preventDefault()
-    console.log(search.value);
-    render(search.value);
+    // console.log(search.value.length)
+    if(search.value.length >= 3){ 
+        console.log(search.value);
+        render(search.value);
 
-    loadTableData(personData);
+        loadTableData(personData);
+    }
 
     const b1 = document.getElementById("botao1");
     const b2 = document.getElementById("botao2");
@@ -186,7 +189,7 @@ let personD = [
     cli.push('botao5');
 
     for(let person of personData){
-        dataHtml += `<tr><td>${person.symbol}</td><td>${person.name}</td><td>${person.exchange}</td><td>${person.ipoDate}</td><td><img src=${status[0]}></td><td><button type="button" id="${cli[0]}" class="btn btn-outline-success mb-3" onmousedown="bleep.play()">Definir</button></td>`;
+        dataHtml += `<tr><td>${person.symbol}</td><td>${person.name}</td><td><img src=${status[0]}></td><td><button type="button" id="${cli[0]}" class="btn-outline-success mb-3" onmousedown="bleep.play()"></button></td>`;
         j=j+1;    
     }
 

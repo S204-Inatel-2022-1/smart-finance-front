@@ -7,7 +7,7 @@
          }
 
          body{
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Abel';
 
          }
 
@@ -17,7 +17,7 @@
             right: 30%;
             bottom: 30%;
             left: 30%;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Abel';
             background: rgba(8,184,8,0.8);
             color: white;
             z-index: 99999;
@@ -111,7 +111,8 @@
          .bloco::before{ /*transição para telas*/
              content: "";
              position: absolute;
-             background-color: rgb(8, 184, 8);
+             background-color: rgb(0 0 0);
+            border: 2px solid rgb(0,255,0);
              width: 40%;
              height: 100%;
              border-top-left-radius: 15px;
@@ -180,12 +181,12 @@
          }
 
          .btn-Segundo{ /*Segundo botão*/
-             background-color: rgb(8, 184, 8);
+             background-color: rgb(0, 0, 0);
              border: 1px solid rgb(8, 184, 8);
              transition: background-color .25s; /*Transição de uma cor para outra*/
          }
          .btn-Segundo:hover{
-             background-color: white;
+             background-color: rgb(255, 255, 255);
              border: 1px solid rgb(8, 184, 8);
              color: rgb(8, 184, 8); /*Cor da fonte*/
              font-weight: bold;
@@ -246,12 +247,15 @@
             height: 45px;
             width: 100%;
             border: none;
-            background-color: #d7dbdb;
+            background-color: #0c0c0c;
+            color: #fff;
+            font-family: 'Abel';
+            font-size: 17px;
             /* margin: 5px; Espaçamento entre os inputs */
          }
 
          .label-input{
-             background-color: #d7dbdb;
+             background-color: #0c0c0c;
              display: flex;
              align-items: center;
              margin: 3px;
@@ -517,7 +521,7 @@
             overflow: hidden;
             height: 100%;
             bottom: -1px;
-            background-image: linear-gradient(to top, rgb(132, 255, 132) 20%, rgb(0, 255, 0) 80%);
+            background-color: black;
         }
         .bgTop {
             z-index: 3;

@@ -46,6 +46,7 @@ window.onload = function () {
         var dataPoints1 = [], dataPoints2 = [];
         var stockChart = new CanvasJS.StockChart("chartContainer",{
         exportEnabled: true,
+        backgroundColor: "#000",
         theme: "dark1",
         title:{
         text:`Empresa ${label}`
@@ -129,6 +130,7 @@ function updateChart(label){
     var dataPoints1 = [], dataPoints2 = [];
     var stockChart = new CanvasJS.StockChart("chartContainer",{
     exportEnabled: true,
+    backgroundColor: "#000",
     theme: "dark1",
     title:{
         text:`Empresa ${label}`

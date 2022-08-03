@@ -5,4 +5,7 @@
 .my-data-table tbody tr{
     display: flex;
     justify-content: space-around;
+    border: 2px solid #00FF75;
+    margin: 10px 2px 6px;
+    align-items: center;
 }
