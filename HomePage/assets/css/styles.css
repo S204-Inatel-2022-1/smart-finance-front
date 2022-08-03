@@ -822,8 +822,8 @@ ul.breadcrumbs {
 
 .notification-area .dropdown-menu,
 .user-profile .dropdown-menu {
-    background: #fff;
-    border: none;
+    background: #000;
+    border: 1px solid #00FF75;
     -webkit-transform: none!important;
             transform: none!important;
     top: 130%!important;
@@ -850,8 +850,14 @@ ul.breadcrumbs {
 }
 
 .user-profile .dropdown-menu a {
-    font-size: 14px;
-    color: #8a8a8a;
+    font-family: 'Abel';
+    font-size: 18px;
+    color: #FFFFFF;
+    text-shadow:
+    -1px -1px 0 #005413,  
+        1px -1px 0 #005413,
+        -1px 1px 0 #005413,
+        1px 1px 0 #005413;
     letter-spacing: 0;
     font-weight: 500;
     padding: 4px 120px;
@@ -859,8 +865,14 @@ ul.breadcrumbs {
 }
 
 .user-profile .dropdown-menu a:hover {
-    background: #f8f9fa;
-    color: #2942fa;
+    font-family: 'Abel';
+    font-size: 18px;
+    color: #FFFFFF;
+    text-shadow:
+    -1px -1px 0 #005413,  
+        1px -1px 0 #005413,
+        -1px 1px 0 #005413,
+        1px 1px 0 #005413;
 }
 
 /*-------------------- END Page Title Area -------------------*/
