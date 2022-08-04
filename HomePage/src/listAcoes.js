@@ -1,6 +1,7 @@
 //  LIsTA DE TODAS AS AÇÕES
 
 const xhrGet = new XMLHttpRequest()
+const xhr = new XMLHttpRequest()
 
 const table = document.querySelector('#my-table-body')
 
@@ -13,27 +14,32 @@ xhrGet.onreadystatechange = function() {
     }
 }
 
-xhrGet.open('GET', 'https://smart-finance-back.herokuapp.com/comprar-acoes')
+xhrGet.open('GET', 'http://localhost:3000/comprar-acoes')
 xhrGet.send()
 
 function listAcoes(acao){
 
     for(var i=0; i<acao.length; i++){
-        let aux
-        if(acao[i] == 'GOLL' | acao[i] == 'SBSP' | acao[i] == 'SUZB'){
-            aux = acao[i].charAt(0) + acao[i].charAt(1) + acao[i].charAt(2)
-            table.innerHTML +=
-            `<tr>
-                <td>`+acao[i]+`</td>
-                <td><button onclick="updateChart('`+aux+`')" type="button" class="btn btn-rounded btn-success mb-3">Selecionar</button></td>
-            </tr>`
+        
+        table.innerHTML +=
+        `<tr>
+            <td>`+acao[i].acao+`</td>
+            <td><button onClick="newPage('`+acao[i].acao+`')" type="button" class="btn btn-rounded btn-success mb-3">Selecionar</button></td>
+        </tr>`
+    }
+}
+
+function newPage(acao){
+    xhr.open("POST", "http://localhost:8000/historico");
+    xhr.setRequestHeader('Content-Type', 'application/json')
+    xhr.send(JSON.stringify(
+        {
+            name: acao
         }
-        else{
-            table.innerHTML +=
-            `<tr>
-                <td>`+acao[i]+`</td>
-                <td><button onclick="updateChart('`+acao[i]+`')" type="button" class="btn btn-rounded btn-success mb-3">Selecionar</button></td>
-            </tr>`
-        }
+    ))
+
+    xhr.onreadystatechange = function () {
+        const data = this.response
+        console.log(data)
     }
 }
