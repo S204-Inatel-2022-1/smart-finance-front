@@ -1,0 +1,548 @@
+/* (1366x768) WXGA Display */
+
+@media screen and (min-width: 1441px) and (max-width: 1920px) {
+    
+}
+
+/*Medium Desktop Device*/
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+
+}
+
+/* Normal desktop :992px. */
+
+@media (min-width: 1200px) and (max-width: 1364px) {
+
+    /* sidebar */
+    
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* dashboard one */
+    
+}
+
+/* Normal desktop :991px. */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* dashboard one */
+    /* sidebar */
+
+}
+
+/* small mobile :320px. */
+
+@media (max-width: 767px) {
+    
+}
+
+/* Large Mobile :480px. */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    /* dashboard one */
+    
+}
+
+/* small mobile :320px. */
+
+@media (min-width: 240px) and (max-width: 479px) {
+    /* dashboard one */
+    /* sidebar */
+    body{
+        font-family: 'Abel';
+        overflow: hidden;
+        background-color: black;
+     }
+    .wave.waveTop {
+        overflow-x: hidden;
+    } 
+    #c11 {
+        left: 90px;
+        top: 90px;
+        position: relative;
+        width: 30%;
+        height: 50%;
+    }
+    #c12 {
+        /* right: 90px; */
+        /* left: 350px; */
+        bottom: 130px;
+        position: relative;
+    }
+    #c21{
+        right: 410px;
+        left: 40px;
+        top: 70px;
+        position: fixed;
+    }
+    #c22 {
+        left: 80px;
+        top: 320px;
+        width: 60%;
+        position: fixed;
+    }
+    .headUm {
+        width: 150%;
+        position: relative;
+        left: 120px;
+        bottom: 19px;
+    }
+    .headDois {
+        width: 140%;
+        position: relative;
+        left: 30px;
+    }
+
+    .bloco{
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        
+        background-color: white;
+        border-radius: 15px;
+        width: 960px;
+        height: 60%;
+     }
+
+     .bloco::before{ /*transição para telas*/
+         content: "";
+         position: absolute;
+         background-color: rgb(0 0 0);
+        border: 2px solid rgb(0,255,0);
+         width: 70% !important;
+         height: 50% !important;
+         border-top-left-radius: 15px;
+         border-bottom-left-radius: 15px;
+         z-index: 5;
+         left: 0%;
+     }
+
+     .parteUm{
+        display: flex;
+        right: 90px;
+     }
+     .parteUm .coluna2{
+         z-index: 12;
+     }
+
+     .titulo{
+         font-size: 28px;
+         font-weight: bold;
+         text-transform: capitalize;
+     }
+
+     .titulo-BemVindo{
+        color:rgb(255, 255, 255);
+        position: relative;
+        left: 160px;
+        bottom: 26px;
+     }
+     #Amigo {
+        left: 73px !important;
+        bottom: 12px !important;
+     }
+     #textA {
+        left: 10px;
+        bottom: 20px;
+     }
+
+     .titulo-Conta{
+         color: rgb(255, 255, 255);
+         bottom: 30px;
+        position: relative;
+     }
+
+     .descricao{
+         font-size: 14px;
+         font-weight: 300;
+         line-height: 30px;
+     }
+     .d1{
+        color: white;
+        left: 90px;
+        bottom: 36px;
+        width: 280px;
+        position: relative;
+        }
+     .d2{
+         color: rgb(255, 255, 255);
+         bottom: 36px;
+        position: relative;
+     }
+
+     #formUm {
+        bottom: 35px;
+        width: 100%;
+        position: relative;
+     }
+
+     #op2 {
+        left: 75px;
+        bottom: 37px;
+     }
+
+     .botao1{ /*Botões em geral*/
+         border-radius: 15px;
+         text-transform: uppercase;
+         color: white;
+         font-size: 10px;
+         padding: 10px 50px;
+         cursor: pointer;
+         font-weight: bold;
+         width: 150px;
+         align-self: center;
+         border-width: 0px; /*Tira a borda*/
+         margin-top: 1rem; /*Espaçamento entre os outros elememtos */
+         text-align: center;
+     }
+
+     .btn-Primeiro{ /*Primeiro botão*/
+         background-color: transparent;
+         border: 1px solid rgb(255, 255, 255);
+         transition: background-color .25s; /*Transição de uma cor para outra*/
+         position: relative;
+        left: 150px;
+        bottom: 54px;
+     }
+     .btn-Primeiro:hover{
+         background-color: white;
+         color: rgb(4, 136, 4);
+         position: relative;
+        left: 150px;
+        bottom: 54px;
+     }
+
+     .btn-Segundo{ /*Segundo botão*/
+         background-color: rgb(0, 0, 0);
+         border: 1px solid rgb(8, 184, 8);
+         transition: background-color .25s; /*Transição de uma cor para outra*/
+         margin: 7px !important;
+     }
+     .btn-Segundo:hover{
+         background-color: rgb(255, 255, 255);
+         border: 1px solid rgb(8, 184, 8);
+         color: rgb(8, 184, 8); /*Cor da fonte*/
+         font-weight: bold;
+         margin: 7px !important;
+     }
+
+     div.coluna1{
+        text-align: center;
+        /* flex: 1 0 auto; Coluna 1 */
+        z-index: 10;
+        width: 40%;
+     }
+     div.coluna2{
+        /*text-align: center;*/
+        /* flex: 2 0 auto; Coluna 2 */
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+     }
+
+     .modal-container {
+        width: 300px !important;
+        height: 400px !important;
+     }
+
+     .formulario{
+        display: flex !important;
+        flex-direction: column !important; /*Coloca os valores um em baixo do outro*/
+        width: 140% !important; 
+     }
+
+     .formulario input {
+        height: 45px;
+        width: 100%;
+        border: none;
+        background-color: #0c0c0c;
+        color: #fff;
+        font-family: 'Abel';
+        font-size: 17px;
+        /* margin: 5px; Espaçamento entre os inputs */
+     }
+
+     .label-input{
+         background-color: #0c0c0c;
+         display: flex;
+         align-items: center;
+         margin: 15px !important;
+        height: 17px;
+     }
+     .icon-Modify{
+         color: rgb(160, 161, 163);
+         padding: 0 5px;
+     }
+
+     /*--------------------------------------------------------------------------------------------------*/
+
+     .parteDois{
+        display: flex;
+        position: absolute;
+        right: 0px; /*Tira a junção de espaço, e coloca junto os blocos um em cima do outro*/
+        /* display: none; Deixar um bloco a mostra por vez */
+     }
+
+     .parteDois .coluna1{
+         order: 2; /*Muda a ordem das colunas*/
+         z-index: -1;
+     }
+
+     .parteDois .coluna2{
+         order: 1;
+         z-index: -1;
+     }
+
+     .password{
+         color: #34495e;
+         font-size: 14px;
+         margin: 15px 0;
+         text-align: center;
+     }
+
+     .VoltarMenu{
+         position: relative;
+         z-index: 20;
+         list-style-type: none;
+         color: white;
+         text-decoration: none
+         
+     }
+     
+     div.bloco.parteDois::before {
+        left: 294px !important;
+        width: 38% !important;
+        top: 230px;
+        opacity: 0;
+     }
+     /* .Cadastrar-js .bloco.parteDois::before {
+        animation: opacidadeR 0.1s !important;
+     }
+     .Cadastrar-js .bloco.parteUm::before {
+        animation: opacidadeRA 0.1s !important;
+     } */
+    
+     div.bloco.parteUm::before {
+        left: 130px !important;
+        width: 80% !important;
+        height: 57% !important;
+        bottom: 0px;
+        /* opacity: 0; */
+     }
+     /* .Entrar-js .parteUm::before {
+        animation: opacidadeR 2s !important;
+     } */
+     /* .Entrar-js .parteDois::before {
+        animation: opacidadeRA 2s !important;
+     } */
+
+    .Entrar-js .parteUm .coluna1,
+    .Entrar-js .parteUm .coluna2{
+        z-index: -1;
+    }
+    .Entrar-js .parteDois .coluna2{
+        z-index: 11;
+    }
+    .Entrar-js .parteDois .coluna1{
+       z-index: 13;
+    }
+    .Entrar-js .bloco::before{
+        left: 0% !important;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+
+        animation: slidein2 2s !important; /*Onde é colocado para iniciar a animação*/
+        animation-fill-mode: forwards !important;
+        z-index: 12;
+    }
+
+    .Cadastrar-js .parteDois .coluna1,
+    .Cadastrar-js .parteDois .coluna2{
+        z-index: -1;
+    }
+    .Cadastrar-js .parteUm .coluna2{
+        z-index: 11;
+    }
+    .Cadastrar-js .parteUm .coluna1{
+        z-index: 13;
+    }
+    .Cadastrar-js .bloco::before{
+       animation: slideout2 2s !important;
+       animation-fill-mode: forwards !important;
+       z-index: 12;
+    }
+
+    /*Deslocamento do Conteudo atras do .bloco::before*/
+    .Entrar-js .parteUm .coluna2{
+        z-index: -1;
+        position: relative;
+        animation: deslocamentoCim 2s;
+    }
+    .Cadastrar-js .parteDois .coluna2{
+        z-index: -1;
+        position: relative;
+        animation: deslocamentoBai 2s;
+    }
+
+    .Cadastrar-js .parteUm .coluna1{
+        position: relative;
+        animation: opacidade 2.5s;
+    }
+    .Entrar-js .parteDois .coluna1{
+        position: relative;
+        animation: opacidade 2.5s;
+    }
+    .Cadastrar-js .parteUm .coluna2{
+        position: relative;
+        animation: opacidade 2s;
+    }
+    .Entrar-js .parteDois .coluna2{
+        position: relative;
+        animation: opacidade 2s;
+    }
+
+    /*ANIMAÇÃO CSS PARA O CONTEUDO*/
+    @keyframes deslocamentoCim{
+        from{
+           bottom: 0;
+           opacity: 1;
+           z-index: 12;
+        }
+
+        25%{
+           bottom: -80px;
+           opacity: .5;
+           z-index: 12;
+        }
+
+        50%{
+           bottom: -100px;
+           opacity: .3;
+           z-index: 12;
+        }
+
+        to{
+           bottom: -120px;
+           opacity: 0;
+           z-index: -1;
+        }
+    }
+    @keyframes deslocamentoBai{
+        from{
+           bottom: 0px;
+           opacity: 1;
+           z-index: 12;
+        }
+
+        25%{
+           bottom: 80px;
+           opacity: .5;
+        }
+
+        50%{
+           bottom: 100px;
+           opacity: .3;
+        }
+
+        to{
+           bottom: 120px;
+           opacity: 0;
+           z-index: -1;
+        }
+    }
+
+    /*ANIMAÇÃO CSS*/
+
+    @keyframes slidein2{
+        from{ /*Inicio*/
+           bottom: 0;
+           width: 40%;
+        }
+
+        25%{
+           bottom: 5%;
+           width: 50%;
+        }
+
+        50%{
+           bottom: 35%;
+           width: 60%;
+        }
+
+        75%{
+           bottom: 55%;
+           width: 50%;
+        }
+
+        to{
+           bottom: 70%;
+           width: 40%;
+        }
+
+    }
+
+    @keyframes slideout2{
+        from{ /*Inicio*/
+           bottom: 70%;
+           width: 40%;
+        }
+
+        25%{
+           bottom: 55%;
+           width: 50%;
+        }
+
+        50%{
+           bottom: 35%;
+           width: 60%;
+        }
+
+        75%{
+           bottom: 5%;
+           width: 50%;
+        }
+
+        to{
+           bottom: 0%;
+           width: 40%;
+        }
+
+    }
+    @keyframes opacidade{
+        from{
+           opacity: 0;
+        }
+
+        25%{
+           opacity: 0;
+        }
+
+        50%{
+           opacity: .3;
+        }
+
+        75%{
+            opacity: .6;
+        }
+
+        to{
+           opacity: 1;
+        }
+    }
+
+    @keyframes opacidadeR{
+        from{
+           opacity: 1;
+        }
+
+        to{
+           opacity: 0;
+        }
+    }
+    
+}

@@ -189,7 +189,7 @@ let personD = [
     cli.push('botao5');
 
     for(let person of personData){
-        dataHtml += `<tr><td>${person.symbol}</td><td>${person.name}</td><td><img src=${status[0]}></td><td><button type="button" id="${cli[0]}" class="btn-outline-success mb-3" onmousedown="bleep.play()"></button></td>`;
+        dataHtml += `<tr><td>${person.symbol}</td><td>${person.name}</td><td><img class="ativoD" src=${status[0]}></td><td><button type="button" id="${cli[0]}" class="btn-outline-success mb-3" onmousedown="bleep.play()"></button></td>`;
         j=j+1;    
     }
 

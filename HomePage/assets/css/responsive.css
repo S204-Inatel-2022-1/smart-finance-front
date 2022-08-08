@@ -577,6 +577,21 @@
 @media (min-width: 240px) and (max-width: 479px) {
     /* dashboard one */
     /* sidebar */
+    .card {
+        background-color: #000;
+    }
+
+    #lef {
+        left: 15%;
+        bottom: 62px;
+    }
+    #planoC {
+        height: 40px;
+    }
+    .page-title-area:before {
+        top: 43%;
+    }
+
     .sidebar-menu {
         width: 280px;
     }
@@ -584,7 +599,8 @@
         position: fixed;
         z-index: 99;
         left: 280px;
-        background: rgb(137,  255, 137);
+        background: rgb(0, 0, 0);
+        border: 1px solid #00ff75;
         padding: 14px;
         top: 0;
         margin: 0;
@@ -597,10 +613,45 @@
     }
     .sbar_collapsed .nav-btn {
         position: initial;
+        border: none;
         background: none;
         padding: 0;
         margin: 10px 30px 0 0;
     }
+
+    #cdD {
+        position: relative;
+        right: 30px;
+        width: 115%;
+    }
+    #colD{
+        width: 110%;
+        max-width: none;
+        position: relative;
+    }
+    #colunaD{
+        width: 110%;
+    }
+
+    table.dbkit-table tr th {
+        font-size: 10px;
+    }
+
+    table.dbkit-table tr td {
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0;
+        color: #ffffff;
+        width: 80px;
+        min-width: 0px;
+    }
+    .table-responsive {
+        overflow-y: hidden;
+    }
+    .ativoD {
+        width: 100%;
+    }
+
     .sbar_collapsed .nav-btn span {
         background: #b3aaaa;
     }
@@ -635,6 +686,11 @@
     }
     .user-profile {
         margin: 16px 0 10px 0;
+    }
+    #UserD {
+        position: relative;
+        bottom: 0px;
+        right: 40px;
     }
     .user-profile .dropdown-menu {
         width: 100%;
@@ -681,6 +737,8 @@
     }
     .market-status-table {
         padding-top: 0!important;
+        left: 10px;
+        position: relative;
     }
     .cripto-live ul li {
         font-size: 14px;
@@ -703,7 +761,8 @@
         margin: 10px 0;
     }
     table.dbkit-table tr {
-        height: 63px;
+        height: 70px;
+        width: 340px;
     }
     /* blog */
     .lts-content h2 a {

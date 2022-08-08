@@ -7,6 +7,8 @@
      <title>Login</title>
      <script src="https://kit.fontawesome.com/531f1902dc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/login.css" />
+    <link rel="stylesheet" href="assets/css/responsive-login.css" />
+
     <link rel="stylesheet" href="assets/css/bubbles.css" />
 
     <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
@@ -26,15 +28,15 @@
     <div class='quadro'>
 
         <div class="bloco parteUm"> <!--Primeira tela login-->
-            <div class="coluna1"> <!--Coluna Direita-->
-                <img src="assets/images/templatemoB2.png" alt="EduWell Template">
+            <div class="coluna1" id="c11"> <!--Coluna Direita-->
+                <img class="headUm" src="assets/images/templatemoB2.png" alt="EduWell Template">
                 <h2 class="titulo titulo-BemVindo">Bem vindo!</h2>
                 <p class="descricao d1">Desejamos a você uma ótima experiência!</p>
                 <p class="descricao d1">por favor, logue com suas informações pessoais</p>
                 <button id="op1" class="botao1 btn-Primeiro">Entrar</button>
             </div>
 
-            <div class="coluna2"> <!--Coluna Esquerda-->
+            <div class="coluna2" id="c12"> <!--Coluna Esquerda-->
                 <h2 class="titulo titulo-Conta">Crie uma conta</h2>
                 <!-- <div class="midia_social">
                     <ul class="lista_midia_social"> Links para conectar a conta
@@ -57,7 +59,7 @@
                 </div> -->
                 <p class="descricao d2">ou use seu email para registrar:</p>
                 <!--Inputs do login 1-->
-                <form class="formulario"> 
+                <form class="formulario" id="formUm"> 
                     <label class="label-input" for="">
                         <i class="fa-regular fa-user icon-Modify"></i>
                         <input id="nomeCadastro" type="text" class="Nome" placeholder="Nome"> <!--Input nome-->
@@ -76,15 +78,15 @@
         </div>
 
         <div class="bloco parteDois"><!--Segunda tela cadastro-->
-            <div class="coluna1"> <!--Coluna Direita-->
-                <img src="assets/images/templatemoB2.png" alt="EduWell Template">
-                <h2 class="titulo titulo-BemVindo">Olá, Amigo!</h2>
-                <p class="descricao d1">Insira seus dados pessoais aqui</p>
-                <p class="descricao d1">e comece sua jornada conosco!</p> 
+            <div class="coluna1" id="c21"> <!--Coluna Direita-->
+                <img class="headDois" src="assets/images/templatemoB2.png" alt="EduWell Template">
+                <h2 class="titulo titulo-BemVindo" id="Amigo">Olá, Amigo!</h2>
+                <p class="descricao d1" id="textA">Insira seus dados pessoais aqui</p>
+                <p class="descricao d1" id="textA">e comece sua jornada conosco!</p> 
                 <button id="op2" class="botao1 btn-Primeiro">Cadastrar</button>
             </div>
 
-            <div class="coluna2"> <!--Coluna Esquerda-->
+            <div class="coluna2" id="c22"> <!--Coluna Esquerda-->
                 <h2 class="titulo titulo-Conta">Acesse sua conta</h2>
                 <!-- <div class="midia_social">
                     <ul class="lista_midia_social"> Links para conectar a conta
