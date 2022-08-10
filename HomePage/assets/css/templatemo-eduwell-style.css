@@ -610,11 +610,15 @@ header
     width: 100%;
   }
   .header-area {
-    background-color: #f7f7f7;
+    background-color: #000000;
     padding: 0px 15px;
-    height: 100px;
+    height: 170px;
     box-shadow: none;
     text-align: center;
+  }
+  #logoP{
+    left: 30px;
+    position:relative
   }
   .header-area .container {
     padding: 0px;
@@ -655,13 +659,14 @@ header
     height: 50px !important;
     line-height: 50px !important;
     padding: 0px !important;
-    border: none !important;
-    background: #f7f7f7 !important;
-    color: #191a20 !important;
+    border: 1px solid #00ff75 !important;
+    background: #000000 !important;
+    color: #00ff75 !important;
   }
   .header-area .main-nav .nav li a:hover {
-    background: #eee !important;
+    background: rgb(0, 0, 0) !important;
     color: #2bff00!important;
+    border: 1px solid #00ff75 !important;
   }
   .header-area .main-nav .nav li.has-sub ul.sub-menu {
     position: relative;
@@ -1953,6 +1958,34 @@ body {
 }
 
 @media (max-width: 767px) {
+  section.simple-cta h4 {
+    width: 110% !important;
+    top: 130px !important;
+    position: relative;
+    font-size: 50px;
+    right: 15px;
+  }
+
+  section.simple-cta p {
+    margin-top: 320px !important;
+    width: 100%;
+  }
+
+  .left-imageP {
+    position: relative;
+    top: 86px;
+    right: 80px !important;
+    left: 0px;
+    width: 100%;
+  }
+  .left-imageB {
+    position: relative;
+    top: 234px;
+    right: 80px !important;
+    left: 0px;
+    width: 100%;
+  }
+
   .header-area .main-nav .nav li.has-sub ul.sub-menu {
     display: none;
   }
@@ -1966,10 +1999,15 @@ body {
   section.our-courses ul.nacc li .left-image img,
   section.our-team ul.nacc li .right-image img {
     border-radius: 15px;
+    left: 120px;
+    position: relative;
+    top: 80px !important;
+    width: 70%;
   }
   section.our-courses ul.nacc li,
   section.our-team ul.nacc li {
     padding: 0px;
+    width: 100%;
   }
   section.our-courses ul.nacc li .right-content {
     margin-left: 0px;
