@@ -24,7 +24,7 @@ function listAcoes(acao){
         table.innerHTML +=
         `<tr>
             <td>`+acao[i].acao+`</td>
-            <td><button onClick="newPage('`+acao[i].acao+`')" type="button" class="btn btn-rounded btn-success mb-3">Selecionar</button></td>
+            <td><button onClick="updateChart('`+acao[i].acao+`')" type="button" class="btn btn-rounded btn-success mb-3">Selecionar</button></td>
         </tr>`
     }
 }
