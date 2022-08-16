@@ -9,7 +9,6 @@ if(localStorage.getItem('loggedIn') == 'true')
             user.innerText = usuario.nome
         }
     
-        console.log(user)
     }, 250)
 }
 

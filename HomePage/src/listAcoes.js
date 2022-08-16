@@ -24,22 +24,7 @@ function listAcoes(acao){
         table.innerHTML +=
         `<tr>
             <td>`+acao[i].acao+`</td>
-            <td><button onClick="updateChart('`+acao[i].acao+`')" type="button" class="btn btn-rounded btn-success mb-3">Selecionar</button></td>
+            <td><button onClick="getData('`+acao[i].acao+`')" type="button" class="btn btn-rounded btn-success mb-3">Selecionar</button></td>
         </tr>`
-    }
-}
-
-function newPage(acao){
-    xhr.open("POST", "http://localhost:8000/historico");
-    xhr.setRequestHeader('Content-Type', 'application/json')
-    xhr.send(JSON.stringify(
-        {
-            name: acao
-        }
-    ))
-
-    xhr.onreadystatechange = function () {
-        const data = this.response
-        console.log(data)
     }
 }
