@@ -4,7 +4,7 @@ window.onload = getData(label)
 
 async function getData(label){
 
-    const url = `http://localhost:8000/historico`;
+    const url = `http://localhost:3000/historico`;
 
     try{
         xhr.open("POST", url);
