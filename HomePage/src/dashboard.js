@@ -3,10 +3,11 @@ const xhr = new XMLHttpRequest()
 
 let data = []
 
-xhrGet.onreadystatechange = function() {
+xhrGet.onreadystatechange = async function() {
     if (xhrGet.readyState === 4) {
         
-        data = JSON.parse(this.response)
+        data = await JSON.parse(this.response)
+        maracutaia(data)
     }
 }
 
@@ -20,177 +21,163 @@ const search = document.querySelector('#pesquisa');
 const nome = document.getElementById("pesquisa");
 const form = document.getElementById("btnP");
 
-/*
-let s = [];
-let n = [];
-let status = [];
-let exchange = [];
-let date = [];
-let i = 0; 
-
-let sortDirection = false;
-let personData = [];
-
-let definir = 0;
-
-const cleanupWord = word => {
-    return word.trim().toUpperCase();
-}
-
-const filterData = word => {
-    return data.filter(item => item.symbol.includes(word));
-}
-
-const render = (word = "") => {
-    list.innerHTML = "";
-
-    word = cleanupWord(word);
-    const filtered = filterData(word);
-
-    definir = filtered.length;    
-    s = [];
-    n = [];
-    status = [];
-    exchange = [];
-    date = [];
-    personData = [];
-    i = 0;
-
-    console.log(filtered.length);
-
-    filtered.forEach(item => {
-    // list.insertAdjacentHTML('beforeend', `<li>${item.symbol}</li>`)
-    //console.log(item);
-    if(i<5){
-        personData.push(item);
-
-        s.push(item.symbol);
-        n.push(item.name);
-        //status.push(item.status);
-        exchange.push(item.exchange);
-        date.push(item.ipoDate);
-
-        if(item.status == 'Active'){
-            status.push("assets/images/icon/market-value/ativo2.png");
-        }
-        else{
-            status.push("assets/images/icon/market-value/inativo2.png");
-        }
-
-        i = i + 1;
-
-    }
+function maracutaia(data){
     
-    console.log(personData);
-    
-    });
-}
+    let s = [];
+    let n = [];
+    //let status = [];
+    //let exchange = [];
+    //let date = [];
+    let i = 0; 
 
-search.addEventListener("input", e => {
-    // console.log(search.value);
-    e.preventDefault()
-    // console.log(search.value.length)
-    if(search.value.length >= 1){ 
-        console.log(search.value);
-        render(search.value);
+    let sortDirection = false;
+    let personData = [];
 
-        loadTableData(personData);
+    let definir = 0;
+
+    const cleanupWord = word => {
+        return word.trim().toUpperCase();
     }
 
-    const b1 = document.getElementById("botao1");
-    const b2 = document.getElementById("botao2");
-    const b3 = document.getElementById("botao3");
-    const b4 = document.getElementById("botao4");
-    const b5 = document.getElementById("botao5");
+    const filterData = word => {
+        return data.filter(item => item.code.includes(word));
+    }
+
+    const render = (word = "") => {
+        list.innerHTML = "";
+
+        word = cleanupWord(word);
+        const filtered = filterData(word);
+
+        definir = filtered.length;    
+        s = [];
+        n = [];
+        /*
+        status = [];
+        exchange = [];
+        date = [];
+        */
+        personData = [];
+        i = 0;
 
 
-    btnP.addEventListener('click', function(e){
-        e.preventDefault();
-        e.stopImmediatePropagation();
+        filtered.forEach(item => {
+        if(i<5){
+            personData.push(item);
+
+            s.push(item.code);
+            n.push(item.name);
+            //status.push(item.status);
+            //exchange.push(item.exchange);
+            //date.push(item.ipoDate);
+            /*
+            if(item.status == 'Active'){
+                status.push("assets/images/icon/market-value/ativo2.png");
+            }
+            else{
+                status.push("assets/images/icon/market-value/inativo2.png");
+            }
+            */
+            i = i + 1;
+
+        }
         
-        if(definir != 0){
-            console.log(nome.value.toUpperCase());
-            updateChart(nome.value.toUpperCase());
+        
+        });
+    }
+
+    search.addEventListener("input", e => {
+        e.preventDefault()
+        if(search.value.length >= 1){ 
+            render(search.value);
+
+            loadTableData(personData);
+        }
+
+        const b1 = document.getElementById("botao1");
+        const b2 = document.getElementById("botao2");
+        const b3 = document.getElementById("botao3");
+        const b4 = document.getElementById("botao4");
+        const b5 = document.getElementById("botao5");
+
+
+        btnP.addEventListener('click', function(e){
+            e.preventDefault();
+            e.stopImmediatePropagation();
             
+            if(definir != 0){
+                getData(nome.value.toUpperCase());
+                
 
-        }
-        else{
-            window.alert('Essa Empresa não existe!!');
-        }
-        
-    })
+            }
+            else{
+                window.alert('Essa Empresa não existe!!');
+            }
+            
+        })
 
-    b1.addEventListener('click', function(e){
-    e.stopImmediatePropagation();
-   
-        console.log(s[0]);
-        updateChart(s[0]);
-
+        b1.addEventListener('click', function(e){
+        e.stopImmediatePropagation();
     
+            getData(s[0]);
+
         
+            
+        });
+        b2.addEventListener('click', function(e){
+            e.stopImmediatePropagation();
+        
+                getData(s[1]);
+
+            
+            
+        })
+        
+        b3.addEventListener('click', function(e){
+            e.stopImmediatePropagation();
+        
+
+                getData(s[2]);
+                
+            
+            
+        })
+        b4.addEventListener('click', function(e){
+            e.stopImmediatePropagation();
+            
+                getData(s[3]);
+                
+            
+            
+        })
+        b5.addEventListener('click', function(e){
+            e.stopImmediatePropagation();
+
+            
+            
+                getData(s[4]);
+            
+            
+            
+        })
+
+
+
     });
-    b2.addEventListener('click', function(e){
-        e.stopImmediatePropagation();
-       
-            console.log(s[1]);
-            updateChart(s[1]);
 
-        
-        
-    })
-    
-    b3.addEventListener('click', function(e){
-        e.stopImmediatePropagation();
-       
-
-            console.log(s[2]);
-            updateChart(s[2]);
-            
-        
-        
-    })
-    b4.addEventListener('click', function(e){
-        e.stopImmediatePropagation();
-        
-            console.log(s[3]);
-            updateChart(s[3]);
-            
-        
-        
-    })
-    b5.addEventListener('click', function(e){
-        e.stopImmediatePropagation();
-
-        
-        
-            console.log(s[4]);
-            updateChart(s[4]);
-        
-        
-        
-    })
-
-
-
-});
-
-
-
-//     let sortDirection = false;
-let personD = [ 
-    {
-    "symbol": "-",
-    "name": "-",
-    "exchange": "-",
-    "assetType": "-",
-    "ipoDate": "-",
-    "delistingDate": null,
-    "status": "-"
+    //     let sortDirection = false;
+    let personD = [ 
+        {
+        "code": "-",
+        "name": "-"
+        /*
+        "exchange": "-",
+        "assetType": "-",
+        "ipoDate": "-",
+        "delistingDate": null,
+        "status": "-"
+        */
     }];
-
-    // window.onload = () => {
-    //     loadTableData(personD);
-    // }
 
     function loadTableData(personData){
     const tableBody = document.getElementById('tableData');
@@ -204,7 +191,7 @@ let personD = [
     cli.push('botao5');
 
     for(let person of personData){
-        dataHtml += `<tr><td>${person.symbol}</td><td>${person.name}</td><td><img class="ativoD" src=${status[0]}></td><td><button type="button" id="${cli[0]}" class="btn-outline-success mb-3" onmousedown="bleep.play()"></button></td>`;
+        dataHtml += `<tr><td>${person.code}</td><td>${person.name}</td><td><img class="ativoD" src=""}></td><td><button type="button" id="${cli[0]}" class="btn-outline-success mb-3" onmousedown="bleep.play()"></button></td>`;
         j=j+1;    
     }
 
@@ -229,4 +216,4 @@ let personD = [
         return sort ? p1[columnName] - p2[columnName] : p2[columnName] - p1[columnName]
     });
     }
-*/
+}
