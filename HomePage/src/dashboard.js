@@ -1,11 +1,26 @@
+const xhrGet = new XMLHttpRequest()
+const xhr = new XMLHttpRequest()
+
+let data = []
+
+xhrGet.onreadystatechange = function() {
+    if (xhrGet.readyState === 4) {
+        
+        data = JSON.parse(this.response)
+    }
+}
+
+xhrGet.open('GET', 'http://localhost:3000/buscar')
+xhrGet.send()
+
 const list = document.querySelector('#list');
 const search = document.querySelector('#pesquisa');
-import {data} from "./rename.js";
+/*import {data} from "../rename.js";*/
 
 const nome = document.getElementById("pesquisa");
 const form = document.getElementById("btnP");
 
-console.log(data);
+/*
 let s = [];
 let n = [];
 let status = [];
@@ -75,7 +90,7 @@ search.addEventListener("input", e => {
     // console.log(search.value);
     e.preventDefault()
     // console.log(search.value.length)
-    if(search.value.length >= 3){ 
+    if(search.value.length >= 1){ 
         console.log(search.value);
         render(search.value);
 
@@ -214,3 +229,4 @@ let personD = [
         return sort ? p1[columnName] - p2[columnName] : p2[columnName] - p1[columnName]
     });
     }
+*/

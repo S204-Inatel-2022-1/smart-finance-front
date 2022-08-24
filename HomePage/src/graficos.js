@@ -1,208 +1,151 @@
-const label = 'EXI';
+let label = 'AZUL4';
+
+window.onload = getData(label)
 
 async function getData(label){
-    console.log('entrou '+label)
 
-    const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${label}&apikey=0ZWXW9IYMFL3DR7W`;
-
-    const options = {
-        method: 'GET',
-        json: true,
-        headers: {
-            'User-Agent': 'request'
-        }
-    }
+    const url = `http://localhost:3000/historico`;
 
     try{
-        const fetch_response = await fetch(url, options);
-        const dat = await fetch_response.json();
-
-        console.log(dat["Meta Data"]["2. Symbol"]);
-        console.log(dat["Time Series (Daily)"]);
-
-        let arr = Object.entries(dat["Time Series (Daily)"]);
-        console.log(arr[0][0]);
-        console.log(arr[0][1]["1. open"]);
-        console.log('url correta == '+ url)
-        return arr;
-    }catch(e){
-        pegouErro(url)
-    }
-    function pegouErro(e){
-        const qs = document.querySelector('#card-body')
-        qs.innerHTML = `<h3 style="text-align: center;">Aguarde 1 minuto para fazer outra requisição.</h3>`
-        console.log('url errada == '+e)
-        setTimeout(() => {
-            document.location.reload(true)
-        }, 60000)
-    }
-}
-
-
-window.onload = function () {
-
-    function grafico(label){ 
-
-        var dataPoints1 = [], dataPoints2 = [];
-        var stockChart = new CanvasJS.StockChart("chartContainer",{
-        exportEnabled: true,
-        backgroundColor: "#000",
-        theme: "dark1",
-        title:{
-        text:`Empresa ${label}`
-        },
-        charts: [{
-        toolTip: {
-            shared: true
-        },
-        axisX: {
-            lineThickness: 5,
-            tickLength: 0,
-            labelFormatter: function(e) {
-            return "";
-            },
-            crosshair: {
-            enabled: true,
-            snapToDataPoint: true,
-            labelFormatter: function(e) {
-                return ""
+        xhr.open("POST", url);
+        xhr.setRequestHeader('Content-Type', 'application/json')
+        xhr.send(JSON.stringify(
+            {
+                name: label
             }
+        ))
+
+        xhr.onreadystatechange = async function () {
+            const data = await this.response
+
+            teste(data);
+        }
+
+        const teste = async (data) => {
+            const a = JSON.parse(data)
+
+            for(var i = 0; i < a.ultimas.length; i++){
+                a.ultimas[i].abrir = Number((a.ultimas[i].abrir).toString().replace(',', '.'))
+                a.ultimas[i].fechamento = Number((a.ultimas[i].fechamento).toString().replace(',', '.'))
+                a.ultimas[i].alto = Number((a.ultimas[i].alto).toString().replace(',', '.'))
+                a.ultimas[i].baixo = Number((a.ultimas[i].baixo).toString().replace(',', '.'))
+
+                const dia = (a.ultimas[i].data).charAt(0) + (a.ultimas[i].data).charAt(1) 
+                const ano = (a.ultimas[i].data).charAt(14) + (a.ultimas[i].data).charAt(15) + (a.ultimas[i].data).charAt(16) + (a.ultimas[i].data).charAt(17)
+                let mes = (a.ultimas[i].data).charAt(6) + (a.ultimas[i].data).charAt(7) + (a.ultimas[i].data).charAt(8)
+                mes = descobreMes(mes)
+
+                const dataCerta = ano + '-' + mes + '-' + dia
+
+                dataPoints1.push({x: new Date((dataCerta).slice(0,10)), y: [Number(a.ultimas[i].abrir), Number(a.ultimas[i].alto), Number(a.ultimas[i].baixo), Number(a.ultimas[i].fechamento)], color: a.ultimas[i].abrir < a.ultimas[i].fechamento ? "green" : "red"});
+                dataPoints2.push({x: new Date((dataCerta).slice(0,10)), y: Number(a.ultimas[i].fechamento), color: a.ultimas[i].abrir < a.ultimas[i].fechamento ? "green" : "red"});
+            }            
+            stockChart.render();
+
+            stockChart.options.title.text = a.name
+
+            function descobreMes(mesCru){
+
+                let mes
+
+                if(mesCru == 'jan'){
+                    mes = '01'
+                }
+                if(mesCru == 'fev'){
+                    mes = '02'
+                }
+                if(mesCru == 'mar'){
+                    mes = '03'
+                }
+                if(mesCru == 'abr'){
+                    mes = '04'
+                }
+                if(mesCru == 'mai'){
+                    mes = '05'
+                }
+                if(mesCru == 'jun'){
+                    mes = '06'
+                }
+                if(mesCru == 'jul'){
+                    mes = '07'
+                }
+                if(mesCru == 'ago'){
+                    mes = '08'
+                }
+                if(mesCru == 'set'){
+                    mes = '09'
+                }
+                if(mesCru == 'out'){
+                    mes = '10'
+                }
+                if(mesCru == 'nov'){
+                    mes = '11'
+                }
+                if(mesCru == 'dez'){
+                    mes = '12'
+                }
+
+                return mes
             }
-        },
-        axisY2: {
-            title: "Cotação",
-            prefix: "$"
-        },
-        legend: {
-            verticalAlign: "top",
-            horizontalAlign: "left"
-        },
-        data: [{
-            name: "Preço (em Dolar)",
-            yValueFormatString: "$#,###.##",
-            axisYType: "secondary",
-            type: "candlestick",
-            risingColor: "green",
-            fallingColor: "red",
-            dataPoints : dataPoints1
-        }]
-        }],
-        navigator: {
-        data: [{
-            color: "green",
-            dataPoints: dataPoints2
-        }],
-        slider: {
-            minimum: new Date('2022, 02, 01'),
-            maximum: new Date('2022, 03, 01')
-        }
-        }
-    });
-
-
-        const teste = async () => {
-            const a = await getData(label);
-            console.log(a);
-
-            //console.log(a[1][0].slice(0,10));
-            // console.log(arr[i][1]["1. open"]);
-
-        for(var i = 0; i < a.length; i++){
-            dataPoints1.push({x: new Date(a[i][0].slice(0,10)), y: [Number(a[i][1]["1. open"]), Number(a[i][1]["2. high"]), Number(a[i][1]["3. low"]), Number(a[i][1]["4. close"])], color: a[i][1]["1. open"] < a[i][1]["4. close"] ? "green" : "red"});
-            dataPoints2.push({x: new Date(a[i][0].slice(0,10)), y: Number(a[i][1]["4. close"]), color: a[i][1]["1. open"] < a[i][1]["4. close"] ? "green" : "red"});
-        }
-        stockChart.render();
-
-        // document.getElementById("moveNavigatorToTop").addEventListener("click", function(){
-        //     stockChart.navigator.set("verticalAlign", "top");
-        // });
-        
         };
-
-        teste();
-    }
-
-    grafico(label);
-}
-
-function updateChart(label){
-
-    var dataPoints1 = [], dataPoints2 = [];
-    var stockChart = new CanvasJS.StockChart("chartContainer",{
-    exportEnabled: true,
-    backgroundColor: "#000",
-    theme: "dark1",
-    title:{
-        text:`Empresa ${label}`
-    },
-    charts: [{
-    toolTip: {
-        shared: true
-    },
-    axisX: {
-        lineThickness: 5,
-        tickLength: 0,
-        labelFormatter: function(e) {
-        return "";
-        },
-        crosshair: {
-        enabled: true,
-        snapToDataPoint: true,
-        labelFormatter: function(e) {
-            return ""
-        }
-        }
-    },
-    axisY2: {
-        title: "Cotação",
-        prefix: "$"
-    },
-    legend: {
-        verticalAlign: "top",
-        horizontalAlign: "left"
-    },
-    data: [{
-        name: "Preço (em Dolar)",
-        yValueFormatString: "$#,###.##",
-        axisYType: "secondary",
-        type: "candlestick",
-        risingColor: "green",
-        fallingColor: "red",
-        dataPoints : dataPoints1
-    }]
-    }],
-    navigator: {
-    data: [{
-        color: "green",
-        dataPoints: dataPoints2
-    }],
-    slider: {
-        minimum: new Date('2022, 02, 01'),
-        maximum: new Date('2022, 03, 01')
-    }
-    }
-});
-
-
-    const teste = async () => {
-        console.log(label)
-        const a = await getData(label);
-        console.log(a);
-
-        //console.log(a[1][0].slice(0,10));
-        // console.log(arr[i][1]["1. open"]);
-
-    for(var i = 0; i < a.length; i++){
-        dataPoints1.push({x: new Date(a[i][0].slice(0,10)), y: [Number(a[i][1]["1. open"]), Number(a[i][1]["2. high"]), Number(a[i][1]["3. low"]), Number(a[i][1]["4. close"])], color: a[i][1]["1. open"] < a[i][1]["4. close"] ? "green" : "red"});
-        dataPoints2.push({x: new Date(a[i][0].slice(0,10)), y: Number(a[i][1]["4. close"]), color: a[i][1]["1. open"] < a[i][1]["4. close"] ? "green" : "red"});
-    }
-    stockChart.render();
-
-    // document.getElementById("moveNavigatorToTop").addEventListener("click", function(){
-    //     stockChart.navigator.set("verticalAlign", "top");
-    // });
+        
+        var dataPoints1 = [], dataPoints2 = [];
     
-    };
-
-    teste();
+        var stockChart = new CanvasJS.StockChart("chartContainer",{
+            exportEnabled: true,
+            backgroundColor: "#000",
+            theme: "dark1",
+            title:{
+                text:`Empresa ${label}`
+            },
+            charts: [{
+            toolTip: {
+                shared: true
+            },
+            axisX: {
+                lineThickness: 5,
+                tickLength: 0,
+                labelFormatter: function(e) {
+                return "";
+                },
+                crosshair: {
+                enabled: true,
+                snapToDataPoint: true,
+                labelFormatter: function(e) {
+                    return ""
+                }
+                }
+            },
+            axisY2: {
+                title: "Cotação",
+                prefix: "R$"
+            },
+            legend: {
+                verticalAlign: "top",
+                horizontalAlign: "left"
+            },
+            data: [{
+                name: "Preço (em Reais)",
+                yValueFormatString: "$#.###,##",
+                axisYType: "secondary",
+                type: "candlestick",
+                risingColor: "green",
+                fallingColor: "red",
+                dataPoints : dataPoints1
+            }]
+            }],
+            navigator: {
+            data: [{
+                color: "green",
+                dataPoints: dataPoints2
+            }],
+            slider: {
+                minimum: new Date('2022, 02, 01'),
+                maximum: new Date('2022, 03, 01')
+            }
+            }
+        });
+    }catch(e){
+        console.log(e)
+    }
 }
