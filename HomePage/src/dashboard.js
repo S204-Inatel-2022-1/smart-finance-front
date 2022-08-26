@@ -118,8 +118,7 @@ function maracutaia(data){
 
         b1.addEventListener('click', function(e){
             e.stopImmediatePropagation();
-            const aux = s[0].substring(1)
-            console.log(aux)
+            const aux = s[0].slice(1, -1)
             getData(aux);
 
         
@@ -128,7 +127,8 @@ function maracutaia(data){
         b2.addEventListener('click', function(e){
             e.stopImmediatePropagation();
         
-                getData(s[1]);
+            const aux = s[1].slice(1, -1)
+            getData(aux);
 
             
             
@@ -138,7 +138,8 @@ function maracutaia(data){
             e.stopImmediatePropagation();
         
 
-                getData(s[2]);
+            const aux = s[2].slice(1, -1)
+            getData(aux);
                 
             
             
@@ -146,7 +147,8 @@ function maracutaia(data){
         b4.addEventListener('click', function(e){
             e.stopImmediatePropagation();
             
-                getData(s[3]);
+            const aux = s[3].slice(1, -1)
+            getData(aux);
                 
             
             
@@ -156,7 +158,8 @@ function maracutaia(data){
 
             
             
-                getData(s[4]);
+            const aux = s[4].slice(1, -1)
+            getData(aux);
             
             
             
@@ -170,7 +173,8 @@ function maracutaia(data){
     let personD = [ 
         {
         "code": "-",
-        "name": "-"
+        "name": "-",
+        "variacao": "-"
         /*
         "exchange": "-",
         "assetType": "-",
@@ -192,7 +196,7 @@ function maracutaia(data){
     cli.push('botao5');
 
     for(let person of personData){
-        dataHtml += `<tr><td>${person.code}</td><td>${person.name}</td><td><img class="ativoD" src=""}></td><td><button type="button" id="${cli[j]}" class="btn-outline-success mb-3" onmousedown="bleep.play()"></button></td>`;
+        dataHtml += `<tr><td>${person.code}</td><td>${person.name}</td><td>${person.variacao}</td><td><button type="button" id="${cli[j]}" class="btn-outline-success mb-3" onmousedown="bleep.play()"></button></td>`;
         j=j+1;    
     }
 
