@@ -17,7 +17,7 @@ async function getData(label){
 
         xhr.onreadystatechange = async function () {
             const data = await this.response
-
+            
             teste(data);
         }
 
