@@ -4,7 +4,7 @@ window.onload = getData(label)
 
 async function getData(label){
 
-    const url = `http://localhost:3000/historico`;
+    const url = `https://smart-finance-back.herokuapp.com/historico`;
 
     try{
         xhr.open("POST", url);

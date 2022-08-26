@@ -10,7 +10,7 @@ xhr.onreadystatechange = async function() {
     }
 }
 
-xhr.open('GET', 'http://localhost:3000/buscar')
+xhr.open('GET', 'https://smart-finance-back.herokuapp.com/buscar')
 xhr.send()
 
 const list = document.querySelector('#list');
@@ -221,7 +221,7 @@ function maracutaia(data){
 
 async function getData(label){
 
-    const url = `http://localhost:3000/historico`;
+    const url = `https://smart-finance-back.herokuapp.com/historico`;
 
     try{
         xhr.open("POST", url);
