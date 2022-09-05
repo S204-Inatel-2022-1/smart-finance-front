@@ -59,7 +59,7 @@
     } 
     #c11 {
         left: 90px;
-        top: 90px;
+        top: 28%;
         position: relative;
         width: 30%;
         height: 50%;
@@ -73,12 +73,12 @@
     #c21{
         right: 410px;
         left: 40px;
-        top: 70px;
+        top: 10%;
         position: fixed;
     }
     #c22 {
         left: 80px;
-        top: 320px;
+        top: 45%;
         width: 60%;
         position: fixed;
     }
